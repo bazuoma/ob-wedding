@@ -1,0 +1,32 @@
+/* Tulip Palette. Raw values are sampled from the florals;
+   every component references the ROLE tokens, never the raw names. */
+:root {
+  /* ---- Raw palette ---- */
+  --raw-crimson:      #932F51;
+  --raw-flower-stem:  #697452;
+  --raw-goldenrod:    #F3B651;
+  --raw-coral:        #D67257;
+  --raw-ivory:        #FBF6EE;
+  --raw-ink:          #2B2926;
+
+  /* ---- Functional roles ----
+     Crimson, Flower Stem and Goldenrod each have exactly ONE job.
+     Coral is the free accent. Swap the palette here, nowhere else. */
+  --color-bg:              var(--raw-ivory);       /* page/section background */
+  --color-bg-alt:          #F2EADC;                /* deeper card/section bg on ivory */
+
+  --color-heading:         var(--raw-crimson);     /* display headings, names, section titles */
+  --color-accent-date:     var(--raw-flower-stem); /* dates + locations only, set in Italianno */
+  --color-accent-free:     var(--raw-coral);       /* dividers, hover, decorative highlights */
+
+  --color-button-bg:       var(--raw-crimson);
+  --color-button-bg-hover: #7c2743;                /* ~12% darker crimson */
+  --color-button-text:     var(--raw-goldenrod);   /* goldenrod ONLY ever sits on crimson */
+
+  --color-text-body:       var(--raw-ink);
+  --color-text-muted:      #6b6560;
+  --color-border:          #e4ddd3;
+
+  --color-success:         #4d6b4a;
+  --color-error:           #932F51;                /* crimson doubles as error — palette stays closed */
+}

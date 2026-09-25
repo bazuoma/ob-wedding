@@ -1,0 +1,30 @@
+/* Three faces, three jobs. Two are scripts and are strictly
+   short-string-only; Nunito Sans carries everything readable. */
+:root {
+  --font-display: 'FleurDeLeah', cursive;                    /* names, hero, page + section titles ONLY */
+  --font-accent:  'Italianno', cursive;                      /* dates + locations ONLY */
+  --font-body:    'Nunito Sans', -apple-system, sans-serif;  /* everything else */
+
+  /* Type scale */
+  --text-hero:    clamp(48px, 8vw, 84px);  /* couple's names, --font-display */
+  --text-h1:      clamp(32px, 4vw, 44px);  /* page titles, --font-display */
+  --text-h2:      26px;                    /* section headings, --font-display */
+  --text-h3:      18px;                    /* card/subsection titles, --font-body 600 */
+  --text-accent:  22px;                    /* dates/locations, --font-accent */
+  --text-body:    16px;
+  --text-body-sm: 14px;
+  --text-caption: 12px;
+  --text-button:  13px;                    /* uppercase, letter-spaced */
+
+  /* Weights actually used — FleurDeLeah and Italianno have no bold */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:   1.2;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.7;
+
+  --tracking-button: 0.08em;
+}

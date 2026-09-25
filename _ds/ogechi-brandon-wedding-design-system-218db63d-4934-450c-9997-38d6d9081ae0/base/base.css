@@ -1,0 +1,94 @@
+/* Base element mapping — the reference implementation.
+   Components follow this mapping rather than inventing new combinations. */
+body {
+  background: var(--color-bg);
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 300;
+  line-height: var(--leading-normal);
+}
+h1, .hero-name {
+  font-family: var(--font-display);
+  color: var(--color-heading);
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
+  font-weight: normal;
+}
+h2, .page-title {
+  font-family: var(--font-display);
+  color: var(--color-heading);
+  font-size: var(--text-h1);
+  line-height: var(--leading-tight);
+  font-weight: normal;
+}
+h3, .section-title {
+  font-family: var(--font-display);
+  color: var(--color-heading);
+  font-size: var(--text-h2);
+  font-weight: normal;
+}
+.subsection-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-h3);
+  color: var(--color-text-body);
+}
+.date-location {
+  font-family: var(--font-accent);
+  color: var(--color-accent-date);
+  font-size: var(--text-accent);
+  letter-spacing: 0;
+}
+p, .body-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--color-text-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+}
+.caption, small {
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  font-size: var(--text-caption);
+}
+a { color: var(--color-heading); text-decoration: none; border-bottom: 1px solid var(--color-accent-free); }
+a:hover { color: var(--color-accent-free); }
+.btn, button, input[type="submit"] {
+  display: inline-block;
+  background: var(--color-button-bg);
+  color: var(--color-button-text);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: 600;
+  letter-spacing: var(--button-letter-spacing);
+  text-transform: uppercase;
+  border: var(--button-border-width) solid var(--color-button-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn:hover, button:hover { background: var(--color-button-bg-hover); border-color: var(--color-button-bg-hover); }
+.btn-outline { background: transparent; color: var(--color-button-bg); border: var(--button-border-width) solid var(--color-button-bg); }
+.btn-outline:hover { background: var(--color-button-bg); color: var(--color-button-text); }
+.card, .panel {
+  background: var(--color-bg-alt);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-5);
+}
+.divider { border: none; border-top: var(--border-width) solid var(--color-accent-free); margin: var(--space-6) 0; }
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-body);
+  background: var(--color-bg);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+}
+input:focus, textarea:focus, select:focus { outline: 2px solid var(--color-heading); outline-offset: 1px; border-color: var(--color-heading); }
+.error-text { color: var(--color-error); font-size: var(--text-body-sm); }

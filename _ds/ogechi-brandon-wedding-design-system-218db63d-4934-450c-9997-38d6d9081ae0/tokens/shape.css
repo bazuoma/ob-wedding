@@ -1,0 +1,15 @@
+/* Structured & Formal: sharp corners, no elevation.
+   Separation comes from space and hairline borders. */
+:root {
+  --radius: 0px;
+  --shadow: none;
+  --border-width: 1px;
+  --border-hairline: 1px solid var(--color-border);
+
+  --button-border-width: 1px;
+  --button-padding-y: 14px;
+  --button-padding-x: 28px;
+  --button-letter-spacing: 0.08em;
+
+  --transition: 0.2s ease; /* @kind other */
+}

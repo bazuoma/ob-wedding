@@ -1,0 +1,10 @@
+/* Ogechi & Brandon — Wedding Design System
+   Global entry point. Consumers link this one file.
+   Import list only — no rules live here. */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/shape.css';
+@import './base/base.css';

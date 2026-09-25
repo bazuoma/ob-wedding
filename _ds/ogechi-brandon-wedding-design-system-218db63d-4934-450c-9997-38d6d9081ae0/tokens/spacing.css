@@ -1,0 +1,16 @@
+/* 8px base unit. Every padding, margin and gap comes from this
+   scale so the four event pages read as one system. */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  --measure: 62ch;        /* max line length for body copy */
+  --page-max: 1100px;     /* content column max width */
+  --page-gutter: var(--space-4);
+}

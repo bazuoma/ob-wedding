@@ -1,0 +1,16 @@
+/* Webfonts. FleurDeLeah + Italianno ship as local .ttf;
+   Nunito Sans loads from Google Fonts (imported in styles.css). */
+@font-face {
+  font-family: 'FleurDeLeah';
+  src: url('../assets/fonts/FleurDeLeah-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Italianno';
+  src: url('../assets/fonts/Italianno-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
