@@ -90,7 +90,7 @@
 <div style="position: relative; background: var(--color-bg); font-family: var(--font-body); color: var(--color-text-body);">
 
   <sc-if value="{{ gateOpen }}" hint-placeholder-val="{{ true }}">
-    <div style="position: fixed; inset: 0; z-index: 90; background: var(--color-bg) url(photos/garden.jpeg) center top / cover no-repeat; display: flex; align-items: flex-start; justify-content: center; overflow-x: hidden; overflow-y: auto;">
+    <div style="position: fixed; inset: 0; z-index: 90; background: var(--color-bg) url(photos/gate-garden-v3.jpeg) center top / cover no-repeat; display: flex; align-items: flex-start; justify-content: center; overflow-x: hidden; overflow-y: auto;">
 
       <sc-if value="{{ atLock }}" hint-placeholder-val="{{ true }}">
         <div data-gate-lock style="display: flex; flex-direction: column; align-items: center; gap: var(--space-4); padding: 210px var(--space-5) var(--space-5); margin: auto;">
@@ -119,7 +119,7 @@
           <div data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5);">
             <div style="text-align: center;">
               <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">The invitation is open</x-import>
-              <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">Who is joining us?</h2>
+              <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">Who Is Joining Us?</h2>
               <p style="margin: 0 auto; max-width: 46ch; color: var(--color-text-muted); font-size: var(--text-body-sm);">Your name tells us which of the two celebrations you are invited to, so the site can show you only what applies to you.</p>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin: var(--space-5) 0 var(--space-4);">
@@ -207,7 +207,7 @@
         <div data-reveal style="min-width: 0; padding: var(--space-5) var(--space-5) var(--space-5) var(--space-5); display: flex; flex-direction: column; justify-content: center; gap: var(--space-3); text-align: left;">
           <div>
             <h2 class="hero-name" style="margin: 0; font-size: clamp(30px, 2.8vw, 42px); line-height: 1.1; color: #FBF6EE;">Our Story</h2>
-            <div class="date-location" style="font-size: clamp(16px, 1.3vw, 20px); line-height: 1.3; margin-top: 4px;">Valley Girl meets South Bay Boy.</div>
+            <div class="date-location" style="font-size: clamp(16px, 1.3vw, 20px); line-height: 1.3; margin-top: 4px;">Valley Girl Meets South Bay Boy.</div>
           </div>
           <p style="margin: 0; font-size: var(--text-body-sm);">Since 2020. Met in Colorado in 2019 through mutual friends. Los Angeles couple through and through.</p>
           <p style="margin: 0; color: var(--color-text-muted); font-size: var(--text-caption);">[Placeholder — send us the longer version of the story and we will set it here.]</p>
@@ -273,11 +273,11 @@
       <div style="max-width: 1100px; margin: 0 auto;">
         <div data-reveal style="text-align: center; margin-bottom: var(--space-7);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Wedding party</x-import>
-          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">The people standing with us</h2>
+          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">The People Standing With Us</h2>
           <p style="max-width: 52ch; margin: 0 auto; color: var(--color-text-muted);">Sixteen in all. Names and photographs are placeholders for now.</p>
         </div>
         <div data-reveal>
-          <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="her side" hint-size="100%,40px"></x-import>
+          <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="Her Side" hint-size="100%,40px"></x-import>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: var(--space-5);">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt);">
               <img data-src="{{ moh.photo }}" alt="{{ moh.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ moh.pos }}; display: block;">
@@ -303,7 +303,7 @@
           </div>
         </div>
         <div data-reveal style="margin-top: var(--space-7);">
-          <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="his side" hint-size="100%,40px"></x-import>
+          <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="His Side" hint-size="100%,40px"></x-import>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: var(--space-5);">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt);">
               <img data-src="{{ bestMan.photo }}" alt="{{ bestMan.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ bestMan.pos }}; display: block;">
@@ -335,7 +335,7 @@
       <div style="max-width: 1100px; margin: 0 auto;">
         <div data-reveal style="text-align: center; margin-bottom: var(--space-6);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Travel &amp; stay</x-import>
-          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE; font-size: clamp(44px, 5vw, 64px);">Where to sleep, how to move</h2>
+          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE; font-size: clamp(44px, 5vw, 64px);">Where to Sleep, How to Move</h2>
           <p style="max-width: 58ch; margin: 0 auto; color: var(--color-text-muted);">{{ travelIntro }}</p>
         </div>
         <sc-for list="{{ travelCities }}" as="city" hint-placeholder-count="2">
@@ -376,7 +376,7 @@
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-7);">
           <div data-reveal style="background: rgba(138,149,115,0.42); padding: var(--space-4) var(--space-5) var(--space-3);">
-            <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="los angeles" hint-size="100%,40px"></x-import>
+            <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="Los Angeles" hint-size="100%,40px"></x-import>
             <sc-for list="{{ todoLA }}" as="t" hint-placeholder-count="4">
               <div style="display: grid; grid-template-columns: 44px 1fr; gap: var(--space-3); padding: var(--space-4) 0; border-top: 1px solid var(--color-border);">
                 <div class="date-location" style="font-size: 28px; line-height: 1;">{{ t.n }}</div>
@@ -388,7 +388,7 @@
             </sc-for>
           </div>
           <div data-reveal style="background: rgba(138,149,115,0.42); padding: var(--space-4) var(--space-5) var(--space-3);">
-            <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="santa barbara" hint-size="100%,40px"></x-import>
+            <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="Santa Barbara" hint-size="100%,40px"></x-import>
             <sc-for list="{{ todoSB }}" as="t" hint-placeholder-count="4">
               <div style="display: grid; grid-template-columns: 44px 1fr; gap: var(--space-3); padding: var(--space-4) 0; border-top: 1px solid var(--color-border);">
                 <div class="date-location" style="font-size: 28px; line-height: 1;">{{ t.n }}</div>
@@ -410,18 +410,18 @@
       <div style="position: relative; padding: var(--space-8) var(--space-5); display: flex; justify-content: center;">
         <div data-reveal data-doily="true" style="width: 760px; max-width: 92vw; border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-6) var(--space-5); text-align: center;">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Registry</x-import>
-          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-3);">A gift, if you wish</h2>
+          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-3);">A Gift, If You Wish</h2>
           <p style="max-width: 52ch; margin: 0 auto var(--space-6);">Your presence at two celebrations, in two cities, is already a great deal to ask. If you would like to give something, we are saving towards a first home together.</p>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); text-align: left;">
             <div style="border: 1px solid rgba(150,125,90,0.3); padding: var(--space-5); background: rgba(251,246,238,0.6); display: flex; flex-direction: column; gap: var(--space-3);">
-              <div class="subsection-title">The house fund</div>
+              <div class="subsection-title">The House Fund</div>
               <p style="margin: 0; font-size: var(--text-body-sm);">A GoFundMe towards the deposit on our first house in Los Angeles.</p>
               <div style="margin-top: auto;">
                 <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" variant="outline" href="#registry" hint-size="auto,44px">Open GoFundMe</x-import>
               </div>
             </div>
             <div style="border: 1px solid rgba(150,125,90,0.3); padding: var(--space-5); background: rgba(251,246,238,0.6); display: flex; flex-direction: column; gap: var(--space-3);">
-              <div class="subsection-title">Amazon registry</div>
+              <div class="subsection-title">Amazon Registry</div>
               <p style="margin: 0; font-size: var(--text-body-sm);">Everyday things for the house, at every price. Shipped straight to us.</p>
               <div style="margin-top: auto;">
                 <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" variant="outline" href="#registry" hint-size="auto,44px">Open Amazon registry</x-import>
@@ -460,7 +460,7 @@
         <div data-reveal style="text-align: center; margin-bottom: var(--space-6);">
           <img src="photos/ob-logo.svg" alt="OB logo" style="width: 150px; height: auto; display: block; margin: 0 auto var(--space-4); filter: brightness(0) invert(1);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Questions</x-import>
-          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">Anything else you might ask</h2>
+          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">Anything Else You Might Ask</h2>
           <p style="max-width: 52ch; margin: 0 auto; color: var(--color-text-muted);">Placeholder questions and answers, so you can see the shape of it.</p>
         </div>
         <div data-reveal data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-2) var(--space-4); color: #2B2926; text-shadow: none;">
@@ -483,7 +483,7 @@
       <div style="max-width: 900px; margin: 0 auto;">
         <div data-reveal style="text-align: center; margin-bottom: var(--space-6);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">RSVP</x-import>
-          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE; font-size: clamp(44px, 5vw, 64px);">Kindly reply by March 1, 2027</h2>
+          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE; font-size: clamp(44px, 5vw, 64px);">Kindly Reply by March 1, 2027</h2>
           <p style="max-width: 54ch; margin: 0 auto; color: var(--color-text-muted);">{{ rsvpIntro }}</p>
         </div>
 
@@ -680,10 +680,11 @@ const BEST_MAN = { role: 'Best man', name: 'Xander Nanji', photo: 'photos/party-
 
 const BRIDESMAIDS = [
   { role: 'Bridesmaid', name: 'Iris', photo: 'photos/party-a.png' },
-  { role: 'Bridesmaid', name: 'Vanessa', photo: 'photos/party-vanessa.png', pos: '48% 24%' },
+  { role: 'Bridesmaid', name: 'Oluchi', photo: 'photos/party-oluchi.png', pos: '50% 26%' },
   { role: 'Bridesmaid', name: 'Stephanie Ibe', photo: 'photos/party-stephanie-ibe.png', pos: '50% 38%' },
-  { role: 'Bridesmaid', photo: '' }, { role: 'Bridesmaid', photo: '' }, { role: 'Bridesmaid', photo: '' },
-  { role: 'Bridesmaid', photo: '' }
+  { role: 'Bridesmaid', name: 'Andrea', photo: 'photos/party-andrea.png', pos: '45% 28%' },
+  { role: 'Bridesmaid', name: 'Vanessa', photo: 'photos/party-vanessa.png', pos: '48% 24%' },
+  { role: 'Bridesmaid', name: 'Adaugo', photo: 'photos/party-adaugo.png', pos: '45% 30%' }
 ];
 
 const GROOMSMEN = [
@@ -691,9 +692,9 @@ const GROOMSMEN = [
   { role: 'Groomsman', name: 'Charlton Azuoma', photo: 'photos/party-c.png' },
   { role: 'Groomsman', name: 'Ignacio Sedano', photo: 'photos/party-b.png' },
   { role: 'Groomsman', name: 'Chinedu Asinugo', photo: 'photos/party-chinedu-asinugo.png', pos: '50% 22%' },
+  { role: 'Groomsman', name: 'Seneb', photo: 'photos/party-seneb.png', pos: '45% 42%' },
   { role: 'Groomsman', name: 'Malcolm Zeger', photo: 'photos/party-malcolm-zeger.png', pos: '48% 18%' },
-  { role: 'Groomsman', photo: '' },
-  { role: 'Groomsman', photo: '' }
+  { role: 'Groomsman', name: 'Obi', photo: 'photos/party-obi.png', pos: '44% 28%' }
 ];
 
 const STORY_SLIDES = [
@@ -957,8 +958,8 @@ class Component extends DCLogic {
         ? 'Where to stay near the ' + only.title + ', and how to get around once you are there.'
         : 'Two cities, two hours apart. Hotels in both, and the sensible ways to move between them.',
       travelCities: [
-        guest.events.indexOf('traditional') > -1 ? { name: 'Los Angeles', note: 'for the traditional wedding', hotels: HOTELS_LA, transport: TRANSPORT_LA } : null,
-        guest.events.indexOf('white') > -1 ? { name: 'Santa Barbara', note: 'for the white wedding', hotels: HOTELS_SB, transport: TRANSPORT_SB } : null
+        guest.events.indexOf('traditional') > -1 ? { name: 'Los Angeles', note: 'For the Traditional Wedding', hotels: HOTELS_LA, transport: TRANSPORT_LA } : null,
+        guest.events.indexOf('white') > -1 ? { name: 'Santa Barbara', note: 'For the White Wedding', hotels: HOTELS_SB, transport: TRANSPORT_SB } : null
       ].filter(Boolean),
 
       todoLA: TODO_LA,
