@@ -218,9 +218,7 @@
     <section id="details" data-screen-label="Details" style="border-top: 1px solid var(--color-border); background: var(--color-bg-alt) url(photos/details-hilltop.jpg) center / cover no-repeat;">
       <div style="padding: var(--space-8) var(--space-5) var(--space-6); text-align: center;">
         <div data-reveal style="max-width: 1100px; margin: 0 auto;">
-          <div style="font-family: var(--font-body); font-size: 16px; letter-spacing: 0.2em; text-transform: uppercase; color: #697452; text-shadow: 0 0 2px rgba(251,246,238,0.95), 0 0 14px rgba(251,246,238,0.85), 0 0 36px rgba(251,246,238,0.6);">The details</div>
           <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-3); color: #697452; font-size: clamp(44px, 5vw, 64px); text-shadow: 0 0 2px rgba(251,246,238,0.95), 0 0 14px rgba(251,246,238,0.85), 0 0 36px rgba(251,246,238,0.6);">A Weekend of Celebrating Love</h2>
-          <p style="max-width: 56ch; margin: 0 auto; font-size: 20px; color: #697452; text-shadow: 0 0 2px rgba(251,246,238,0.95), 0 0 14px rgba(251,246,238,0.85), 0 0 36px rgba(251,246,238,0.6);">{{ detailsIntro }}</p>
         </div>
       </div>
 
@@ -274,7 +272,6 @@
         <div data-reveal style="text-align: center; margin-bottom: var(--space-7);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Wedding party</x-import>
           <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">The People Standing With Us</h2>
-          <p style="max-width: 52ch; margin: 0 auto; color: var(--color-text-muted);">Sixteen in all. Names and photographs are placeholders for now.</p>
         </div>
         <div data-reveal>
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="Her Side" hint-size="100%,40px"></x-import>
@@ -285,7 +282,7 @@
             <div class="subsection-title" style="font-size: var(--text-body-sm);">{{ moh.name }}</div>
             <div class="caption" style="letter-spacing: 0.12em; text-transform: uppercase;">{{ moh.role }}</div>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5) var(--space-4); margin-top: var(--space-5);">
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); margin: var(--space-5) auto 0; max-width: 720px;">
             <sc-for list="{{ bridesmaids }}" as="p" hint-placeholder-count="8">
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                 <div style="width: 148px; height: 148px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
@@ -336,7 +333,6 @@
         <div data-reveal style="text-align: center; margin-bottom: var(--space-6);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Travel &amp; stay</x-import>
           <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE; font-size: clamp(44px, 5vw, 64px);">Where to Sleep, How to Move</h2>
-          <p style="max-width: 58ch; margin: 0 auto; color: var(--color-text-muted);">{{ travelIntro }}</p>
         </div>
         <sc-for list="{{ travelCities }}" as="city" hint-placeholder-count="2">
           <div data-reveal style="margin-top: var(--space-6);">
@@ -676,7 +672,7 @@ const GALLERY = [
 ];
 
 const MOH = { role: 'Maid of honour', name: 'Alexa Allegretti', photo: 'photos/party-alexa-allegretti.png', pos: '50% 32%' };
-const BEST_MAN = { role: 'Best man', name: 'Xander Nanji', photo: 'photos/party-e.jpeg', pos: '50% 50%' };
+const BEST_MAN = { role: 'Best man', name: 'Xander Nanji', photo: 'photos/party-xander-nanji.png', pos: '51% 26%' };
 
 const BRIDESMAIDS = [
   { role: 'Bridesmaid', name: 'Iris', photo: 'photos/party-a.png' },
@@ -690,11 +686,11 @@ const BRIDESMAIDS = [
 const GROOMSMEN = [
   { role: 'Groomsman', name: 'Christopher Azuoma', photo: 'photos/party-d.png' },
   { role: 'Groomsman', name: 'Charlton Azuoma', photo: 'photos/party-c.png' },
-  { role: 'Groomsman', name: 'Ignacio Sedano', photo: 'photos/party-b.png' },
+  { role: 'Groomsman', name: 'Ignacio Sedano', photo: 'photos/party-ignacio-sedano.png', pos: '50% 28%' },
   { role: 'Groomsman', name: 'Chinedu Asinugo', photo: 'photos/party-chinedu-asinugo.png', pos: '50% 22%' },
+  { role: 'Groomsman', name: 'Obi', photo: 'photos/party-obi.png', pos: '44% 28%' },
   { role: 'Groomsman', name: 'Seneb', photo: 'photos/party-seneb.png', pos: '45% 42%' },
-  { role: 'Groomsman', name: 'Malcolm Zeger', photo: 'photos/party-malcolm-zeger.png', pos: '48% 18%' },
-  { role: 'Groomsman', name: 'Obi', photo: 'photos/party-obi.png', pos: '44% 28%' }
+  { role: 'Groomsman', name: 'Malcolm Zeger', photo: 'photos/party-malcolm-zeger.png', pos: '48% 18%' }
 ];
 
 const STORY_SLIDES = [
