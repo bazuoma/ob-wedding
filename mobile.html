@@ -21,6 +21,7 @@
 <style>
   @font-face { font-family: 'Felipa'; src: url('fonts/Felipa-Regular.ttf') format('truetype'); font-display: swap; }
   @font-face { font-family: 'Quintessential'; src: url('fonts/Quintessential-Regular.ttf') format('truetype'); font-display: swap; }
+  @font-face { font-family: 'My Soul'; src: url('fonts/MySoul-Regular.ttf') format('truetype'); font-display: swap; }
   @font-face { font-family: 'Italiana'; src: url('fonts/Italiana-Regular.ttf') format('truetype'); font-display: swap; }
   :root, body {
     --font-display: 'Felipa', serif;
@@ -53,7 +54,13 @@
     --color-button-bg-hover: #F2EADC;
     --color-button-text: #697452;
   }
+  #party p, #party .subsection-title, #party .caption { color: #FBF6EE !important; font-weight: 700; font-synthesis: weight; text-shadow: none; }
+  #party p { display: inline-block; background: none; padding: 0; color: #932F51 !important; }
+  #party .subsection-title { background: rgba(105,116,82,0.82); padding: 4px 12px 2px; font-size: 20px !important; line-height: 1.2; margin-bottom: -10px; }
+  #party .caption { background: rgba(105,116,82,0.82); padding: 2px 12px 4px; font-size: 12px !important; }
+  #party [data-doily] dt, #party [data-doily] dd { color: inherit; }
   #details [data-doily] dt, #details [data-doily] dd { font-weight: 700 !important; font-synthesis: weight; }
+  dl > div { grid-template-columns: minmax(0, 1fr) !important; gap: 2px !important; text-align: center; }
   [data-doily] {
     text-shadow: none;
     color: #2B2926;
@@ -82,7 +89,6 @@
 
   <sc-if value="{{ gateOpen }}" hint-placeholder-val="{{ true }}">
     <div style="position: fixed; inset: 0; z-index: 90; background: var(--color-bg) url(photos/garden.jpeg) center top / cover no-repeat; display: flex; align-items: flex-start; justify-content: center; overflow-x: hidden; overflow-y: auto;">
-      <div style="position: absolute; inset: 12px; border: 1px solid var(--color-bg); pointer-events: none;"></div>
 
       <sc-if value="{{ atLock }}" hint-placeholder-val="{{ true }}">
         <div data-gate-lock style="display: flex; flex-direction: column; align-items: center; gap: var(--space-4); padding: 170px var(--space-4) var(--space-5); margin: auto;">
@@ -108,7 +114,7 @@
 
       <sc-if value="{{ atVerify }}">
         <div style="width: 520px; max-width: 92vw; margin: auto; padding: var(--space-5) 0; animation: obFadeUp 0.7s ease both;">
-          <div data-doily="true" style="border: 24px solid transparent; border-image: url(photos/doily-edge.png) 72 / 24px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5);">
+          <div data-doily="true" style="border: 40px solid transparent; border-image: url(photos/doily-lace.png) 156 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5);">
             <div style="text-align: center;">
               <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">The invitation is open</x-import>
               <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">Who is joining us?</h2>
@@ -158,23 +164,17 @@
       <div data-reveal style="position: relative; width: 100%; padding: 0 var(--space-3); box-sizing: border-box; margin: var(--space-7) 0 0; color: var(--color-bg); text-shadow: 0 1px 3px rgba(43,41,38,0.9), 0 0 22px rgba(43,41,38,0.6), 0 0 60px rgba(43,41,38,0.4);">
         <h1 style="margin: 0; font-weight: 400; color: var(--color-bg); line-height: 0.9; display: flex; flex-direction: column;">
           <span style="align-self: flex-start; padding-left: 0; display: flex; align-items: baseline;">
-            <span style="font-family: var(--font-display); font-size: 26vw; line-height: 0.8; margin-right: -0.06em;">O</span>
-            <span style="font-family: var(--font-body); font-size: 14.5vw; letter-spacing: 0.02em; line-height: 0.9;">GECHI</span>
+            <span style="font-family: 'My Soul', cursive; font-weight: 400; line-height: 1; letter-spacing: 0; font-size: 24vw;">Ogechi</span>
           </span>
-          <span style="align-self: center; font-family: var(--font-display); font-size: 11vw; line-height: 0.9; margin: 0.3em 0 0.35em;">&amp;</span>
+          <span style="align-self: center; font-family: 'My Soul', cursive; font-weight: 400; line-height: 1; letter-spacing: 0; font-size: 14vw; margin: 0.05em 0 0.1em;">&amp;</span>
           <span style="align-self: flex-end; padding-right: 0; display: flex; align-items: baseline;">
-            <span style="font-family: var(--font-display); font-size: 26vw; line-height: 0.8; margin-right: -0.04em;">B</span>
-            <span style="font-family: var(--font-body); font-size: 14.5vw; letter-spacing: 0.02em; line-height: 0.9;">RANDON</span>
+            <span style="font-family: 'My Soul', cursive; font-weight: 400; line-height: 1; letter-spacing: 0; font-size: 24vw;">Brandon</span>
           </span>
         </h1>
         <div style="text-align: center; margin-top: var(--space-5);">
           <div style="font-family: var(--font-body); font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase;">Are Getting Married</div>
           <div style="font-family: var(--font-accent); font-size: 18px; line-height: 1.3; margin-top: 6px;">Memorial Day Weekend of 2027</div>
         </div>
-      </div>
-      <div style="position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px;">
-        <span class="caption" style="letter-spacing: 0.16em; text-transform: uppercase; background: var(--color-bg); padding: 4px 10px;">Scroll</span>
-        <span style="width: 1px; height: 42px; background: var(--color-accent-free);"></span>
       </div>
     </section>
 
@@ -211,7 +211,7 @@
       </div>
     </section>
 
-    <section id="details" data-screen-label="Details" style="border-top: 1px solid var(--color-border); background: var(--color-bg-alt) url(photos/sb-zoo-2.jpg) center / cover no-repeat;">
+    <section id="details" data-screen-label="Details" style="border-top: 1px solid var(--color-border); background: var(--color-bg-alt) url(photos/details-hilltop.jpg) center / cover no-repeat;">
       <div style="padding: var(--space-6) var(--space-4) var(--space-5); text-align: center;">
         <div data-reveal style="max-width: 1100px; margin: 0 auto;">
           <div style="font-family: var(--font-body); font-size: 16px; letter-spacing: 0.2em; text-transform: uppercase; color: #697452; text-shadow: 0 0 2px rgba(251,246,238,0.95), 0 0 14px rgba(251,246,238,0.85), 0 0 36px rgba(251,246,238,0.6);">The details</div>
@@ -223,7 +223,7 @@
       <sc-if value="{{ detailsPlate }}" hint-placeholder-val="{{ true }}">
         <div style="max-width: 1100px; margin: 0 auto; padding: 0 var(--space-3) var(--space-6); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4);">
           <sc-for list="{{ events }}" as="e" hint-placeholder-count="2">
-            <div data-reveal data-doily="true" style="border: 24px solid transparent; border-image: url(photos/doily-edge.png) 72 / 24px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5) var(--space-4); text-align: center;">
+            <div data-reveal data-doily="true" style="border: 40px solid transparent; border-image: url(photos/doily-lace.png) 156 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5) var(--space-4); text-align: center;">
               <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">{{ e.ord }}</x-import>
               <h3 class="page-title" style="margin: var(--space-3) 0 var(--space-2); font-size: 32px;">{{ e.title }}</h3>
               <div class="date-location">{{ e.date }}</div>
@@ -265,7 +265,7 @@
       </sc-if>
     </section>
 
-    <section id="party" data-sage="true" data-screen-label="Wedding party" style="padding: var(--space-6) var(--space-4); border-top: 1px solid var(--color-border);">
+    <section id="party" data-sage="true" data-screen-label="Wedding party" style="padding: var(--space-6) var(--space-4); border-top: 1px solid var(--color-border); background: #697452 url(photos/party-hilltop.jpg) center / cover no-repeat;">
       <div style="max-width: 1100px; margin: 0 auto;">
         <div data-reveal style="text-align: center; margin-bottom: var(--space-5);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Wedding party</x-import>
@@ -279,7 +279,7 @@
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
                   <sc-if value="{{ p.photo }}" hint-placeholder-val="{{ false }}">
-                    <img data-src="{{ p.photo }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img data-src="{{ p.photo }}" alt="{{ p.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ p.pos }}; display: block;">
                   </sc-if>
                   <sc-if value="{{ p.empty }}" hint-placeholder-val="{{ true }}">
                     <span class="caption" style="letter-spacing: 0.16em; text-transform: uppercase;">Photo</span>
@@ -298,7 +298,7 @@
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
                   <sc-if value="{{ p.photo }}" hint-placeholder-val="{{ false }}">
-                    <img data-src="{{ p.photo }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img data-src="{{ p.photo }}" alt="{{ p.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ p.pos }}; display: block;">
                   </sc-if>
                   <sc-if value="{{ p.empty }}" hint-placeholder-val="{{ true }}">
                     <span class="caption" style="letter-spacing: 0.16em; text-transform: uppercase;">Photo</span>
@@ -328,7 +328,7 @@
             </div>
             <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); margin-top: var(--space-4);">
               <sc-for list="{{ city.hotels }}" as="h" hint-placeholder-count="3">
-                <div data-doily="true" style="border: 24px solid transparent; border-image: url(photos/doily-edge.png) 72 / 24px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-3) var(--space-3) var(--space-4);">
+                <div data-doily="true" style="border: 40px solid transparent; border-image: url(photos/doily-lace.png) 156 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-3) var(--space-3) var(--space-4);">
                   <div class="subsection-title">{{ h.name }}</div>
                   <div class="date-location" style="font-size: 19px; margin: 4px 0 var(--space-2);">{{ h.area }}</div>
                   <p style="margin: 0; font-size: var(--text-body-sm);">{{ h.note }}</p>
@@ -338,9 +338,9 @@
             </div>
             <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); margin-top: var(--space-4);">
               <sc-for list="{{ city.transport }}" as="t" hint-placeholder-count="3">
-                <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-3);">
-                  <div class="caption" style="letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-date);">{{ t.label }}</div>
-                  <p style="margin: 6px 0 0; font-size: var(--text-body-sm);">{{ t.value }}</p>
+                <div style="background: rgba(105,116,82,0.88); padding: var(--space-3) var(--space-4); text-shadow: none;">
+                  <div class="caption" style="letter-spacing: 0.14em; text-transform: uppercase; color: #FBF6EE; font-weight: 700;">{{ t.label }}</div>
+                  <p style="margin: 6px 0 0; font-size: var(--text-body-sm); color: #FBF6EE;">{{ t.value }}</p>
                 </div>
               </sc-for>
             </div>
@@ -390,7 +390,7 @@
         <img src="photos/coast.jpeg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
       </div>
       <div style="position: relative; padding: var(--space-6) var(--space-3); display: flex; justify-content: center;">
-        <div data-reveal data-doily="true" style="width: 100%; box-sizing: border-box; border: 24px solid transparent; border-image: url(photos/doily-edge.png) 72 / 24px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-6) var(--space-5); text-align: center;">
+        <div data-reveal data-doily="true" style="width: 100%; box-sizing: border-box; border: 40px solid transparent; border-image: url(photos/doily-lace.png) 156 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-6) var(--space-5); text-align: center;">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Registry</x-import>
           <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-3);">A gift, if you wish</h2>
           <p style="max-width: 52ch; margin: 0 auto var(--space-6);">Your presence at two celebrations, in two cities, is already a great deal to ask. If you would like to give something, we are saving towards a first home together.</p>
@@ -471,7 +471,7 @@
         </div>
 
         <sc-if value="{{ rsvpDone }}" hint-placeholder-val="{{ false }}">
-          <div data-reveal data-doily="true" style="border: 24px solid transparent; border-image: url(photos/doily-edge.png) 72 / 24px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-6); text-align: center;">
+          <div data-reveal data-doily="true" style="border: 40px solid transparent; border-image: url(photos/doily-lace.png) 156 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-6); text-align: center;">
             <h3 class="page-title" style="margin: 0 0 var(--space-3); font-size: 40px;">{{ thanksLine }}</h3>
             <p style="max-width: 48ch; margin: 0 auto var(--space-5);">A confirmation is on its way. If anything changes, reply to that email and we will sort it out.</p>
             <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.DetailList" items="{{ rsvpSummary }}" style="max-width: 520px; margin: 0 auto; text-align: left;" hint-size="100%,120px"></x-import>
@@ -482,7 +482,7 @@
         </sc-if>
 
         <sc-if value="{{ rsvpFormOpen }}" hint-placeholder-val="{{ true }}">
-          <div data-reveal data-doily="true" style="border: 20px solid transparent; border-image: url(photos/doily-edge.png) 72 / 20px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-3);">
+          <div data-reveal data-doily="true" style="border: 40px solid transparent; border-image: url(photos/doily-lace.png) 156 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-3);">
             <sc-if value="{{ rsvpStepped }}" hint-placeholder-val="{{ false }}">
               <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-3); margin-bottom: var(--space-5);">
                 <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" hint-size="auto,16px">{{ stepLabel }}</x-import>
@@ -531,7 +531,8 @@
     </section>
 
     <footer data-sage="true" style="border-top: 1px solid var(--color-border); padding: var(--space-7) var(--space-5) var(--space-6); text-align: center;">
-      <div style="font-family: var(--font-display); font-size: 38px; color: var(--color-heading); line-height: 1.1;">OB's Garden Party</div>
+      <img src="photos/ob-logo.svg" alt="OB logo" style="width: 130px; height: auto; display: block; margin: 0 auto var(--space-3); filter: brightness(0) invert(1);">
+      <div style="font-family: var(--font-display); font-size: 38px; color: #FBF6EE; line-height: 1.1;">OB's Garden Party</div>
       <div class="date-location" style="margin-top: var(--space-2);">May 28 &amp; May 30, 2027 · Los Angeles &amp; Santa Barbara</div>
       <div style="margin-top: var(--space-5);">
         <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" variant="outline" size="sm" on-click="{{ onBackToTop }}" hint-size="auto,40px">Back to top</x-import>
@@ -539,14 +540,6 @@
       <div class="caption" style="margin-top: var(--space-5);">Questions? Write to us at ogechiandbrandon@email.com</div>
     </footer>
 
-    <div style="position: fixed; left: 18px; bottom: 18px; z-index: 50; width: 196px; border: 1px dashed var(--color-border); background: var(--color-bg); padding: var(--space-3);">
-      <button type="button" onClick="{{ onToggleControls }}" data-plain="true" style="background: transparent; border: none; padding: 0; margin-bottom: 8px; cursor: pointer; font-family: var(--font-body); font-size: var(--text-caption); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-text-muted);">Mockup controls {{ controlsMark }}</button>
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <sc-for list="{{ controls }}" as="c" hint-placeholder-count="3">
-          <button type="button" onClick="{{ c.onClick }}" data-plain="true" style="background: transparent; border: 1px solid var(--color-border); color: var(--color-text-body); font-family: var(--font-body); font-size: var(--text-caption); font-weight: 400; letter-spacing: 0.02em; text-transform: none; padding: 7px 10px; cursor: pointer; text-align: left;" style-hover="border-color: var(--color-accent-free); color: var(--color-accent-free);">{{ c.label }}</button>
-        </sc-for>
-      </div>
-    </div>
   </sc-if>
 </div>
 
@@ -573,11 +566,11 @@ const GUESTS = {
 const EVENTS = {
   traditional: {
     key: 'traditional', ord: 'The first celebration', title: 'Traditional Nigerian Ceremony',
-    date: 'Friday, May 28, 2027', loc: 'Los Angeles, California', shortLoc: 'Los Angeles',
+    date: 'Friday, May 28, 2027', loc: 'CMG Cultural Center · Gardena, CA', shortLoc: 'CMG Cultural Center, Gardena',
     dress: 'Nigerian attire', photo: 'photos/rings-raised.jpeg', kicker: 'Traditional · May 28',
     details: [
       { label: 'Time', value: 'Rites begin at 2:00pm. Please be seated by 1:45pm.' },
-      { label: 'Place', value: 'Venue in Los Angeles — to be confirmed.' },
+      { label: 'Place', value: 'CMG Cultural Center, 715 W Redondo Beach Blvd, Gardena, CA 90247. On-site parking details to follow.' },
       { label: 'Dress', value: 'Nigerian attire. Aso ebi colours will be shared closer to the date.' },
       { label: 'Note', value: 'Igbo traditional rites, followed by food and dancing.' }
     ],
@@ -668,15 +661,17 @@ const GALLERY = [
 
 const BRIDESMAIDS = [
   { role: 'Maid of honour', photo: 'photos/party-a.png' },
-  { role: 'Bridesmaid', photo: '' }, { role: 'Bridesmaid', photo: '' }, { role: 'Bridesmaid', photo: '' },
+  { role: 'Bridesmaid', name: 'Vanessa', photo: 'photos/party-vanessa.png', pos: '48% 24%' },
+  { role: 'Bridesmaid', name: 'Stephanie Ibe', photo: 'photos/party-stephanie-ibe.png', pos: '50% 38%' },
+  { role: 'Bridesmaid', photo: '' },
   { role: 'Bridesmaid', photo: '' }, { role: 'Bridesmaid', photo: '' }, { role: 'Bridesmaid', photo: '' },
   { role: 'Bridesmaid', photo: '' }
 ];
 
 const GROOMSMEN = [
-  { role: 'Best man', photo: 'photos/party-c.png' },
+  { role: 'Best man', name: 'Xander Nanji', photo: 'photos/party-e.jpeg' },
+  { role: 'Groomsman', photo: 'photos/party-c.png' },
   { role: 'Groomsman', photo: 'photos/party-d.png' },
-  { role: 'Groomsman', photo: 'photos/party-e.jpeg' },
   { role: 'Groomsman', photo: 'photos/party-b.png' },
   { role: 'Groomsman', photo: '' }, { role: 'Groomsman', photo: '' }, { role: 'Groomsman', photo: '' },
   { role: 'Groomsman', photo: '' }
@@ -686,9 +681,10 @@ const STORY_SLIDES = [
   { src: 'photos/couple-embrace.jpeg', pos: '50% 35%', caption: 'Engagement, 2025' },
   { src: 'photos/couple-walk.jpeg', pos: '50% 40%', caption: 'El Matador' },
   { src: 'photos/rings-close.jpeg', pos: '50% 50%', caption: 'The rings' },
-  { src: '', caption: 'Colorado, 2019' },
-  { src: '', caption: 'Los Angeles' },
-  { src: '', caption: 'To come' }
+  { src: 'photos/story-proposal.jpeg', pos: '50% 68%', caption: 'The proposal' },
+  { src: 'photos/story-rock.jpeg', pos: '50% 28%', caption: 'Engagement' },
+  { src: 'photos/story-bw.jpeg', pos: '50% 38%', caption: 'Engagement' },
+  { src: 'photos/story-kiss.jpeg', pos: '50% 58%', caption: 'The ring' }
 ];
 
 const TARGET = new Date('2027-05-30T16:00:00-07:00').getTime();
@@ -791,9 +787,7 @@ class Component extends DCLogic {
     if (shackle) shackle.style.animation = 'obShackle 0.6s 1.5s cubic-bezier(.3,0,.2,1) forwards';
     if (panel) panel.style.animation = 'obFadeOut 0.6s 2s ease forwards';
     setTimeout(() => {
-      this.setState({ stage: 'site', unlocking: false, gateError: false, guest: { first: 'Amara', name: 'Amara Okafor', events: ['traditional', 'white'], seats: 2 } });
-      window.scrollTo(0, 0);
-      setTimeout(() => this.setupReveal(), 80);
+      this.setState({ stage: 'verify', unlocking: false, gateError: false });
     }, 2500);
   };
 
@@ -923,8 +917,8 @@ class Component extends DCLogic {
         ? 'Your invitation is for the ' + only.title + '. Everything you need for the day is below.'
         : 'You are invited to both. The traditional wedding in Los Angeles on the Friday, and the white wedding at the Hilltop on the Sunday.',
 
-      bridesmaids: BRIDESMAIDS.map((p, i) => ({ role: p.role, photo: p.photo, empty: !p.photo, name: i === 0 ? 'Name to come' : 'Name to come' })),
-      groomsmen: GROOMSMEN.map(p => ({ role: p.role, photo: p.photo, empty: !p.photo, name: 'Name to come' })),
+      bridesmaids: BRIDESMAIDS.map(p => ({ role: p.role, photo: p.photo, pos: p.pos || '50% 50%', empty: !p.photo, name: p.name || 'Name to come' })),
+      groomsmen: GROOMSMEN.map(p => ({ role: p.role, photo: p.photo, pos: p.pos || '50% 50%', empty: !p.photo, name: p.name || 'Name to come' })),
 
       travelIntro: only
         ? 'Where to stay near the ' + only.title + ', and how to get around once you are there.'
