@@ -9,11 +9,23 @@
 <meta property="og:description" content="Memorial Day Weekend 2027 · Los Angeles &amp; Santa Barbara">
 <meta property="og:image" content="photos/hero-beach.jpeg">
 <link rel="icon" href="photos/ob-logo.svg">
-<script>
-  var page = window.matchMedia('(max-width: 768px)').matches ? 'mobile.html' : 'desktop.html';
-  location.replace(page + location.search + location.hash);
-</script>
 <style>body { margin: 0; background: #FBF6EE; }</style>
+<script>
+  // One link for everyone: load the phone or desktop design into this page
+  // instead of redirecting, so the address bar never changes.
+  // A phone held sideways still counts as a phone (touch + small screen).
+  var isPhone = window.matchMedia('(max-width: 768px)').matches ||
+    (window.matchMedia('(pointer: coarse)').matches && Math.min(screen.width, screen.height) <= 500);
+  var page = isPhone ? 'mobile.html' : 'desktop.html';
+  fetch(page)
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function (html) {
+      document.open();
+      document.write(html);
+      document.close();
+    })
+    .catch(function () { location.replace(page + location.hash); });
+</script>
 </head>
 <body>
 <noscript><p style="font-family: serif; text-align: center; padding: 40px;">Open the <a href="desktop.html">desktop</a> or <a href="mobile.html">mobile</a> site.</p></noscript>
