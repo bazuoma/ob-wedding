@@ -54,11 +54,12 @@
     --color-button-bg-hover: #F2EADC;
     --color-button-text: #697452;
   }
-  #party p, #party .subsection-title, #party .caption { color: #FBF6EE !important; font-weight: 700; font-synthesis: weight; text-shadow: none; }
+  #party p, #party .subsection-title, #party .caption { color: #697452 !important; font-weight: 700; font-synthesis: weight; text-shadow: none; }
   #party p { display: inline-block; background: none; padding: 0; color: #932F51 !important; }
-  #party .subsection-title { background: rgba(105,116,82,0.82); padding: 4px 12px 2px; font-size: 20px !important; line-height: 1.2; margin-bottom: -10px; }
-  #party .caption { background: rgba(105,116,82,0.82); padding: 2px 12px 4px; font-size: 12px !important; }
+  #party .subsection-title { background: rgba(251,246,238,0.82); padding: 4px 12px 2px; font-size: 20px !important; line-height: 1.2; margin-bottom: -10px; }
+  #party .caption { background: rgba(251,246,238,0.82); padding: 2px 12px 4px; font-size: 12px !important; }
   #party [data-doily] dt, #party [data-doily] dd { color: inherit; }
+  #details dd { white-space: pre-line; }
   #details [data-doily] dt, #details [data-doily] dd { font-weight: 700 !important; font-synthesis: weight; }
   [data-doily] {
     text-shadow: none;
@@ -272,6 +273,13 @@
         </div>
         <div data-reveal>
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="her side" hint-size="100%,40px"></x-import>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: var(--space-5);">
+            <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt);">
+              <img data-src="{{ moh.photo }}" alt="{{ moh.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ moh.pos }}; display: block;">
+            </div>
+            <div class="subsection-title" style="font-size: var(--text-body-sm);">{{ moh.name }}</div>
+            <div class="caption" style="letter-spacing: 0.12em; text-transform: uppercase;">{{ moh.role }}</div>
+          </div>
           <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5) var(--space-4); margin-top: var(--space-5);">
             <sc-for list="{{ bridesmaids }}" as="p" hint-placeholder-count="8">
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
@@ -291,6 +299,13 @@
         </div>
         <div data-reveal style="margin-top: var(--space-7);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="his side" hint-size="100%,40px"></x-import>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: var(--space-5);">
+            <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt);">
+              <img data-src="{{ bestMan.photo }}" alt="{{ bestMan.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ bestMan.pos }}; display: block;">
+            </div>
+            <div class="subsection-title" style="font-size: var(--text-body-sm);">{{ bestMan.name }}</div>
+            <div class="caption" style="letter-spacing: 0.12em; text-transform: uppercase;">{{ bestMan.role }}</div>
+          </div>
           <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5) var(--space-4); margin-top: var(--space-5);">
             <sc-for list="{{ groomsmen }}" as="p" hint-placeholder-count="8">
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
@@ -567,7 +582,7 @@ const EVENTS = {
     dress: 'Nigerian attire', photo: 'photos/rings-raised.jpeg', kicker: 'Traditional · May 28',
     details: [
       { label: 'Time', value: 'Rites begin at 2:00pm. Please be seated by 1:45pm.' },
-      { label: 'Place', value: 'CMG Cultural Center, 715 W Redondo Beach Blvd, Gardena, CA 90247. On-site parking details to follow.' },
+      { label: 'Place', value: 'CMG Cultural Center\n715 W Redondo Beach Blvd, Gardena, CA 90247. On-site parking details to follow.' },
       { label: 'Dress', value: 'Nigerian attire. Aso ebi colours will be shared closer to the date.' },
       { label: 'Note', value: 'Igbo traditional rites, followed by food and dancing.' }
     ],
@@ -583,7 +598,7 @@ const EVENTS = {
     dress: 'Garden formal', photo: 'photos/couple-walk.jpeg', kicker: 'White wedding · May 30',
     details: [
       { label: 'Time', value: 'Ceremony at 4:00pm. Doors open at 3:15pm.' },
-      { label: 'Place', value: 'The Hilltop, Santa Barbara Zoo, 500 Niños Drive.' },
+      { label: 'Place', value: 'The Hilltop, Santa Barbara Zoo\n500 Niños Drive, Santa Barbara, CA 93103.' },
       { label: 'Dress', value: 'Garden formal. The lawn is grass — bring shoes you can stand in.' },
       { label: 'Note', value: 'Ceremony and dinner are outdoors, above the ocean.' }
     ],
@@ -656,21 +671,24 @@ const GALLERY = [
   { src: '', ratio: '3 / 4', caption: 'The first dance' }
 ];
 
+const MOH = { role: 'Maid of honour', name: 'Alexa Allegretti', photo: 'photos/party-alexa-allegretti.png', pos: '50% 32%' };
+const BEST_MAN = { role: 'Best man', name: 'Xander Nanji', photo: 'photos/party-e.jpeg', pos: '50% 50%' };
+
 const BRIDESMAIDS = [
-  { role: 'Maid of honour', photo: 'photos/party-a.png' },
+  { role: 'Bridesmaid', name: 'Iris', photo: 'photos/party-a.png' },
   { role: 'Bridesmaid', name: 'Vanessa', photo: 'photos/party-vanessa.png', pos: '48% 24%' },
   { role: 'Bridesmaid', name: 'Stephanie Ibe', photo: 'photos/party-stephanie-ibe.png', pos: '50% 38%' },
-  { role: 'Bridesmaid', photo: '' },
   { role: 'Bridesmaid', photo: '' }, { role: 'Bridesmaid', photo: '' }, { role: 'Bridesmaid', photo: '' },
   { role: 'Bridesmaid', photo: '' }
 ];
 
 const GROOMSMEN = [
-  { role: 'Best man', name: 'Xander Nanji', photo: 'photos/party-e.jpeg' },
-  { role: 'Groomsman', photo: 'photos/party-c.png' },
-  { role: 'Groomsman', photo: 'photos/party-d.png' },
-  { role: 'Groomsman', photo: 'photos/party-b.png' },
-  { role: 'Groomsman', photo: '' }, { role: 'Groomsman', photo: '' }, { role: 'Groomsman', photo: '' },
+  { role: 'Groomsman', name: 'Christopher Azuoma', photo: 'photos/party-d.png' },
+  { role: 'Groomsman', name: 'Charlton Azuoma', photo: 'photos/party-c.png' },
+  { role: 'Groomsman', name: 'Ignacio Sedano', photo: 'photos/party-b.png' },
+  { role: 'Groomsman', name: 'Chinedu Asinugo', photo: 'photos/party-chinedu-asinugo.png', pos: '50% 22%' },
+  { role: 'Groomsman', name: 'Malcolm Zeger', photo: 'photos/party-malcolm-zeger.png', pos: '48% 18%' },
+  { role: 'Groomsman', photo: '' },
   { role: 'Groomsman', photo: '' }
 ];
 
@@ -909,6 +927,7 @@ class Component extends DCLogic {
         ? 'Your invitation is for the ' + only.title + '. Everything you need for the day is below.'
         : 'You are invited to both. The traditional wedding in Los Angeles on the Friday, and the white wedding at the Hilltop on the Sunday.',
 
+      moh: MOH, bestMan: BEST_MAN,
       bridesmaids: BRIDESMAIDS.map(p => ({ role: p.role, photo: p.photo, pos: p.pos || '50% 50%', empty: !p.photo, name: p.name || 'Name to come' })),
       groomsmen: GROOMSMEN.map(p => ({ role: p.role, photo: p.photo, pos: p.pos || '50% 50%', empty: !p.photo, name: p.name || 'Name to come' })),
 
