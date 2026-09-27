@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <title>Ogechi &amp; Brandon · May 2027</title>
 <link rel="icon" href="photos/ob-logo.svg">
+<script>window.OB_VERSION='20260927162613';
+fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+  if (!j.v || j.v === window.OB_VERSION) return;
+  var key = 'ob-reloaded-' + j.v;
+  try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (e) { return; }
+  location.replace(location.pathname + '?v=' + j.v + location.hash);
+}).catch(function () {});</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 </head>
