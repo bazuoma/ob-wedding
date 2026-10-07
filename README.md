@@ -1,6 +1,6 @@
 # Ogechi & Brandon — wedding site
 
-Preview of the wedding website designed in Claude Design. Live at **https://bazuoma.github.io/ob-wedding/**.
+Preview of the wedding website designed in Claude Design. Live at **https://ogechiandbrandon.love** (custom domain via the `CNAME` file; keep that file when updating).
 
 - `index.html` is the one link for everyone: it loads `mobile.html` (phones) or `desktop.html` (everything else) into itself, so the address never changes.
 - `support.js` is the Claude Design runtime that renders the pages (loads React from unpkg).
