@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Ogechi &amp; Brandon · May 2027</title>
 <link rel="icon" href="photos/ob-logo.svg">
-<script>window.OB_VERSION='20261007153655';
+<script>window.OB_VERSION='20261007162605';
 fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
   if (!j.v || j.v === window.OB_VERSION) return;
   var key = 'ob-reloaded-' + j.v;
@@ -86,9 +86,10 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
     --color-button-bg-hover: #56603f;
     --color-button-text: #FBF6EE;
   }
+  section h2.page-title, section h2.hero-name { -webkit-text-stroke: 0.025em currentColor; paint-order: stroke fill; }
   [data-hotel-link] a { border-bottom: none; text-decoration: none; box-sizing: border-box; padding: 12px 10px !important; font-size: 11px !important; letter-spacing: 0.06em !important; line-height: 1.3; text-align: center; }
   button:not([data-plain]), a[href="#registry"], a[href*="zola.com"], [data-hotel-link] a { position: relative; border-radius: 8px !important; }
-  button:not([data-plain])::after, a[href="#registry"], a[href*="zola.com"]::after, [data-hotel-link] a::after {
+  button:not([data-plain])::after, a[href="#registry"]::after, a[href*="zola.com"]::after, [data-hotel-link] a::after {
     content: ''; position: absolute; inset: 5px; border-radius: 4px;
     border: 1px dashed currentColor; opacity: 0.5; pointer-events: none;
   }
@@ -120,35 +121,24 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
                 <img id="ob-key" src="photos/gold-key.png" alt="Gold key" style="height: 109px; width: auto; display: block; transform: rotate(-90deg); transform-origin: 50% 50%;">
               </div>
             </div>
-            <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" on-click="{{ onUnlock }}" size="lg" hint-size="auto,52px">Unlock invitation</x-import>
-            <div class="date-location" style="font-size: 20px; text-align: center; color: var(--color-bg); text-shadow: 0 1px 2px rgba(43,41,38,0.95), 0 0 12px rgba(43,41,38,0.8); animation: obBreathe 3.4s ease-in-out infinite;">May 2027 · Los Angeles &amp; Santa Barbara</div>
+            <div class="date-location" style="font-size: 20px; text-align: center; color: var(--color-bg); text-shadow: 0 1px 2px rgba(43,41,38,0.95), 0 0 12px rgba(43,41,38,0.8); font-weight: 700; font-synthesis: weight; -webkit-text-stroke: 0.6px currentColor; paint-order: stroke fill;">May 2027 · Los Angeles &amp; Santa Barbara</div>
+            <div data-doily="true" style="width: 340px; max-width: 86vw; box-sizing: border-box; border: 40px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-3); text-align: center;">
+              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Field" label="Password" html-for="gate-pass" hint-size="100%,76px">
+                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Input" id="gate-pass" type="password" autocomplete="off" placeholder="From your invitation" value="{{ password }}" on-change="{{ onPassword }}" on-key-down="{{ onPassKey }}" hint-size="100%,44px"></x-import>
+              </x-import>
+              <sc-if value="{{ gateError }}">
+                <p style="margin: 0; color: var(--color-error); font-size: var(--text-body-sm);">That password is not quite right. Check your invitation and try again.</p>
+              </sc-if>
+              <sc-if value="{{ hasPassword }}">
+                <div style="animation: obFadeUp 0.4s ease both;">
+                  <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" on-click="{{ onUnlock }}" full-width="{{ true }}" hint-size="100%,48px">Unlock Invitation</x-import>
+                </div>
+              </sc-if>
+            </div>
           </div>
         </div>
       </sc-if>
 
-      <sc-if value="{{ atVerify }}">
-        <div style="width: 520px; max-width: 92vw; margin: auto; padding: var(--space-5) 0; animation: obFadeUp 0.7s ease both;">
-          <div data-doily="true" style="border: 44px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 44px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5);">
-            <div style="text-align: center;">
-              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">The invitation is open</x-import>
-              <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">Who Is Joining Us?</h2>
-              <p style="margin: 0 auto; max-width: 46ch; color: var(--color-text-muted); font-size: var(--text-body-sm);">Your name tells us which of the two celebrations you are invited to, so the site can show you only what applies to you.</p>
-            </div>
-            <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); margin: var(--space-4) 0 var(--space-4);">
-              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Field" label="First name" html-for="gate-first" hint-size="100%,76px">
-                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Input" id="gate-first" value="{{ firstName }}" on-change="{{ onFirstName }}" placeholder="Amara" hint-size="100%,44px"></x-import>
-              </x-import>
-              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Field" label="Last name" html-for="gate-last" hint-size="100%,76px">
-                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Input" id="gate-last" value="{{ lastName }}" on-change="{{ onLastName }}" placeholder="Okafor" hint-size="100%,44px"></x-import>
-              </x-import>
-            </div>
-            <sc-if value="{{ gateError }}">
-              <p style="margin: 0 0 var(--space-4); color: var(--color-error); font-size: var(--text-body-sm);">We cannot find that name on our list. Check the spelling, or write to us and we will sort it out.</p>
-            </sc-if>
-            <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" on-click="{{ onVerify }}" full-width="{{ true }}" hint-size="100%,48px">Enter</x-import>
-          </div>
-        </div>
-      </sc-if>
     </div>
   </sc-if>
 
@@ -351,7 +341,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
                   <div class="date-location" style="font-size: 19px; margin: 4px 0 var(--space-2);">{{ h.area }}</div>
                   <p style="margin: 0; font-size: var(--text-body-sm);">{{ h.note }}</p>
                   <div data-hotel-link="true" style="margin-top: var(--space-3);">
-                    <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" href="{{ h.url }}" target="_blank" rel="noopener" full-width="{{ true }}" hint-size="100%,44px">Visit Website</x-import>
+                    <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" variant="outline" href="{{ h.url }}" target="_blank" rel="noopener" full-width="{{ true }}" hint-size="100%,44px">Visit Website</x-import>
                   </div>
                 </div>
               </sc-for>
@@ -731,7 +721,8 @@ class Component extends DCLogic {
 
   unlock = () => {
     if (this.state.unlocking) return;
-    this.setState({ unlocking: true });
+    if ((this.state.password || '').trim().toLowerCase() !== 'obgardenparty') { this.setState({ gateError: true }); return; }
+    this.setState({ unlocking: true, gateError: false });
     const key = document.getElementById('ob-key');
     const shackle = document.getElementById('ob-shackle');
     const panel = document.querySelector('[data-gate-lock]');
@@ -756,19 +747,14 @@ class Component extends DCLogic {
     if (shackle) shackle.style.animation = 'obShackle 0.6s 2s cubic-bezier(.3,0,.2,1) forwards';
     if (panel) panel.style.animation = 'obFadeOut 0.6s 2.6s ease forwards';
     setTimeout(() => {
-      this.setState({ stage: 'verify', unlocking: false, gateError: false });
+      this.setState({ unlocking: false });
+      this.verify();
     }, 3200);
   };
 
   verify = () => {
-    const first = this.state.first.trim();
-    const last = this.state.last.trim();
-    const rec = GUESTS[(first + ' ' + last).toLowerCase()] || { events: ['traditional', 'white'], seats: 2 };
-    const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
-    this.setState({
-      gateError: false, stage: 'site',
-      guest: { first: cap(first), name: [cap(first), cap(last)].filter(Boolean).join(' '), events: rec.events, seats: rec.seats }
-    });
+    if ((this.state.password || '').trim().toLowerCase() !== 'obgardenparty') { this.setState({ gateError: true }); return; }
+    this.setState({ gateError: false, stage: 'site', guest: { first: '', name: '', events: ['traditional', 'white'], seats: 2 } });
     window.scrollTo(0, 0);
     setTimeout(() => this.setupReveal(), 80);
   };
@@ -844,10 +830,10 @@ class Component extends DCLogic {
       siteOpen: s.stage === 'site',
       onUnlock: this.unlock,
       onVerify: this.verify,
-      firstName: s.first,
-      lastName: s.last,
-      onFirstName: e => this.setState({ first: e.target.value, gateError: false }),
-      onLastName: e => this.setState({ last: e.target.value, gateError: false }),
+      password: s.password || '',
+      onPassword: e => this.setState({ password: e.target.value, gateError: false }),
+      onPassKey: e => { if (e.key === 'Enter') this.unlock(); },
+      hasPassword: !!(s.password || '').trim(),
       gateError: s.gateError,
 
       storyArrowOpacity: s.storyHover ? '1' : '0',
