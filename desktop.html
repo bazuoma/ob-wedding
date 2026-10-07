@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Ogechi &amp; Brandon · May 2027</title>
 <link rel="icon" href="photos/ob-logo.svg">
-<script>window.OB_VERSION='20260927162613';
+<script>window.OB_VERSION='20261007153655';
 fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
   if (!j.v || j.v === window.OB_VERSION) return;
   var key = 'ob-reloaded-' + j.v;
@@ -25,16 +25,19 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
 <link rel="stylesheet" href="_ds/ogechi-brandon-wedding-design-system-218db63d-4934-450c-9997-38d6d9081ae0/base/base.css">
 <link rel="stylesheet" href="_ds/ogechi-brandon-wedding-design-system-218db63d-4934-450c-9997-38d6d9081ae0/styles.css">
 <script src="_ds/ogechi-brandon-wedding-design-system-218db63d-4934-450c-9997-38d6d9081ae0/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Antic+Didone&family=Monsieur+La+Doulaise&family=Pinyon+Script&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&display=swap">
 <style>
   @font-face { font-family: 'Felipa'; src: url('fonts/Felipa-Regular.ttf') format('truetype'); font-display: swap; }
   @font-face { font-family: 'Quintessential'; src: url('fonts/Quintessential-Regular.ttf') format('truetype'); font-display: swap; }
+  @font-face { font-family: 'Explora'; src: url('fonts/Explora-Regular.ttf') format('truetype'); font-display: swap; }
+  @font-face { font-family: 'Blosta Script'; src: url('fonts/Blosta-Script.otf') format('opentype'); font-display: swap; }
   @font-face { font-family: 'Lavishly Yours'; src: url('fonts/LavishlyYours-Regular.ttf') format('truetype'); font-display: swap; }
   @font-face { font-family: 'Beau Rivage'; src: url('fonts/BeauRivage-Regular.ttf') format('truetype'); font-display: swap; }
   @font-face { font-family: 'My Soul'; src: url('fonts/MySoul-Regular.ttf') format('truetype'); font-display: swap; }
   @font-face { font-family: 'Italiana'; src: url('fonts/Italiana-Regular.ttf') format('truetype'); font-display: swap; }
   :root, body {
-    --font-display: 'Beau Rivage', cursive;
-    --font-accent: 'Quintessential', serif;
+    --font-display: 'Explora', cursive;
+    --font-accent: 'Explora', cursive;
     --font-body: 'Italiana', serif;
   }
   body { margin: 0; background: var(--color-bg); overflow-x: hidden; font-synthesis: none; }
@@ -69,6 +72,8 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
   #party .caption { background: rgba(251,246,238,0.82); padding: 2px 12px 4px; font-size: 12px !important; }
   #party [data-doily] dt, #party [data-doily] dd { color: inherit; }
   #details dd { white-space: pre-line; }
+  [data-bm-grid] > *, [data-gm-grid] > * { grid-column: span 2; }
+  [data-bm-grid] > :first-child, [data-gm-grid] > :first-child { grid-column: 2 / span 2; }
   #details [data-doily] dt, #details [data-doily] dd { font-weight: 700 !important; font-synthesis: weight; }
   [data-doily] {
     text-shadow: none;
@@ -82,8 +87,9 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
     --color-button-bg-hover: #56603f;
     --color-button-text: #FBF6EE;
   }
-  button:not([data-plain]), a[href="#registry"] { position: relative; border-radius: 8px !important; }
-  button:not([data-plain])::after, a[href="#registry"]::after {
+  [data-hotel-link] a { border-bottom: none; text-decoration: none; box-sizing: border-box; padding: 12px 10px !important; font-size: 11px !important; letter-spacing: 0.06em !important; line-height: 1.3; text-align: center; }
+  button:not([data-plain]), a[href="#registry"], a[href*="zola.com"], [data-hotel-link] a { position: relative; border-radius: 8px !important; }
+  button:not([data-plain])::after, a[href="#registry"], a[href*="zola.com"]::after, [data-hotel-link] a::after {
     content: ''; position: absolute; inset: 5px; border-radius: 4px;
     border: 1px dashed currentColor; opacity: 0.5; pointer-events: none;
   }
@@ -142,14 +148,6 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
             </sc-if>
             <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" on-click="{{ onVerify }}" full-width="{{ true }}" hint-size="100%,48px">Enter</x-import>
           </div>
-          <div style="margin-top: var(--space-4); border: 1px dashed var(--color-border); background: var(--color-bg); padding: var(--space-3) var(--space-4);">
-            <div class="caption" style="letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: var(--space-2);">Mockup only · try a guest</div>
-            <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
-              <sc-for list="{{ demoGuests }}" as="g" hint-placeholder-count="3">
-                <button type="button" onClick="{{ g.onPick }}" data-plain="true" style="background: transparent; border: 1px solid var(--color-border); color: var(--color-text-body); font-family: var(--font-body); font-size: var(--text-caption); font-weight: 400; letter-spacing: 0.04em; text-transform: none; padding: 8px 12px; cursor: pointer;" style-hover="border-color: var(--color-accent-free); color: var(--color-accent-free);">{{ g.label }}</button>
-              </sc-for>
-            </div>
-          </div>
         </div>
       </sc-if>
     </div>
@@ -170,17 +168,13 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
         <img src="photos/hero-beach.jpeg" alt="Ogechi and Brandon on the beach" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block;">
       </div>
       <div data-reveal style="position: relative; width: 1100px; max-width: 94vw; margin: var(--space-6) 0 0; color: var(--color-bg); text-shadow: 0 1px 3px rgba(43,41,38,0.9), 0 0 22px rgba(43,41,38,0.6), 0 0 60px rgba(43,41,38,0.4);">
-        <h1 style="margin: 0; font-weight: 400; color: var(--color-bg); line-height: 0.9; display: flex; flex-direction: column;">
-          <span style="align-self: flex-start; padding-left: 4%; display: flex; align-items: baseline;">
-            <span style="font-family: 'Lavishly Yours', cursive; font-weight: 400; line-height: 1; letter-spacing: 0; font-size: clamp(110px, 17vw, 250px);">Ogechi</span>
-          </span>
-          <span style="align-self: center; font-family: 'Lavishly Yours', cursive; font-weight: 400; line-height: 1; letter-spacing: 0; font-size: clamp(56px, 8vw, 120px); margin: 0.05em 0 0.1em;">&amp;</span>
-          <span style="align-self: flex-end; padding-right: 2%; display: flex; align-items: baseline;">
-            <span style="font-family: 'Lavishly Yours', cursive; font-weight: 400; line-height: 1; letter-spacing: 0; font-size: clamp(110px, 17vw, 250px);">Brandon</span>
-          </span>
+        <h1 style="margin: 0; font-weight: 400; color: var(--color-bg); display: flex; flex-direction: column;">
+          <span style="align-self: flex-start; padding-left: 4%; font-family: 'Beau Rivage', cursive; font-weight: 400; font-size: clamp(110px, 14vw, 210px); line-height: 1.05; letter-spacing: 0;">Ogechi</span>
+          <span style="align-self: center; font-family: 'Beau Rivage', cursive; font-weight: 400; font-size: clamp(64px, 7vw, 104px); line-height: 1; margin: 0.05em 0;">&amp;</span>
+          <span style="align-self: flex-end; padding-right: 2%; font-family: 'Beau Rivage', cursive; font-weight: 400; font-size: clamp(110px, 14vw, 210px); line-height: 1.05; letter-spacing: 0;">Brandon</span>
         </h1>
-        <div style="text-align: center; margin-top: var(--space-5);">
-          <div style="font-family: var(--font-body); font-size: clamp(16px, 1.2vw, 18px); letter-spacing: 0.28em; text-transform: uppercase;">Are Getting Married</div>
+        <div style="text-align: center; margin-top: calc(var(--space-8) + 24px);">
+          <div style="font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(20px, 1.6vw, 26px); letter-spacing: 0.14em; text-transform: uppercase;">Are Getting Married</div>
           <div style="font-family: var(--font-accent); font-size: clamp(18px, 1.44vw, 22px); line-height: 1.3; margin-top: 6px;">Memorial Day Weekend of 2027</div>
         </div>
       </div>
@@ -274,7 +268,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
       </sc-if>
     </section>
 
-    <section id="party" data-sage="true" data-screen-label="Wedding party" style="padding: var(--space-8) var(--space-5); border-top: 1px solid var(--color-border); background: #697452 url(photos/party-hilltop.jpg) center / cover no-repeat;">
+    <section id="party" data-sage="true" data-screen-label="Wedding party" style="padding: var(--space-8) var(--space-5); border-top: 1px solid var(--color-border); background: #697452 url(photos/party-lawn.jpg) center 70% / cover no-repeat;">
       <div style="max-width: 1100px; margin: 0 auto;">
         <div data-reveal style="text-align: center; margin-bottom: var(--space-7);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Wedding party</x-import>
@@ -289,7 +283,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
             <div class="subsection-title" style="font-size: var(--text-body-sm);">{{ moh.name }}</div>
             <div class="caption" style="letter-spacing: 0.12em; text-transform: uppercase;">{{ moh.role }}</div>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); margin: var(--space-5) auto 0; max-width: 720px;">
+          <div data-bm-grid="true" style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); margin: var(--space-5) auto 0; max-width: 720px;">
             <sc-for list="{{ bridesmaids }}" as="p" hint-placeholder-count="8">
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                 <div style="width: 148px; height: 148px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
@@ -315,7 +309,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
             <div class="subsection-title" style="font-size: var(--text-body-sm);">{{ bestMan.name }}</div>
             <div class="caption" style="letter-spacing: 0.12em; text-transform: uppercase;">{{ bestMan.role }}</div>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5) var(--space-4); margin-top: var(--space-5);">
+          <div data-gm-grid="true" style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); margin-top: var(--space-5);">
             <sc-for list="{{ groomsmen }}" as="p" hint-placeholder-count="8">
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                 <div style="width: 148px; height: 148px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
@@ -350,10 +344,15 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-4);">
               <sc-for list="{{ city.hotels }}" as="h" hint-placeholder-count="3">
                 <div data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-3) var(--space-3) var(--space-4);">
+                  <sc-if value="{{ h.couple }}" hint-placeholder-val="{{ false }}">
+                    <div style="display: inline-block; margin-bottom: var(--space-2); padding: 4px 10px; border: 1px solid #932F51; color: #932F51; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">The Bride &amp; Groom are staying here</div>
+                  </sc-if>
                   <div class="subsection-title">{{ h.name }}</div>
                   <div class="date-location" style="font-size: 19px; margin: 4px 0 var(--space-2);">{{ h.area }}</div>
                   <p style="margin: 0; font-size: var(--text-body-sm);">{{ h.note }}</p>
-                  <div class="caption" style="margin-top: var(--space-3); letter-spacing: 0.12em; text-transform: uppercase;">{{ h.rate }}</div>
+                  <div data-hotel-link="true" style="margin-top: var(--space-3);">
+                    <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" href="{{ h.url }}" target="_blank" rel="noopener" full-width="{{ true }}" hint-size="100%,44px">Visit Website</x-import>
+                  </div>
                 </div>
               </sc-for>
             </div>
@@ -424,10 +423,10 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
               </div>
             </div>
             <div style="border: 1px solid rgba(150,125,90,0.3); padding: var(--space-5); background: rgba(251,246,238,0.6); display: flex; flex-direction: column; gap: var(--space-3);">
-              <div class="subsection-title">Amazon Registry</div>
+              <div class="subsection-title">Registry</div>
               <p style="margin: 0; font-size: var(--text-body-sm);">Everyday things for the house, at every price. Shipped straight to us.</p>
               <div style="margin-top: auto;">
-                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" variant="outline" href="#registry" hint-size="auto,44px">Open Amazon registry</x-import>
+                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" variant="outline" href="https://www.zola.com/registry/ogechiandbrandon" target="_blank" rel="noopener" hint-size="auto,44px">Open Registry</x-import>
               </div>
             </div>
           </div>
@@ -482,74 +481,6 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
       </div>
     </section>
 
-    <section id="rsvp" data-sage="true" data-screen-label="RSVP" style="padding: var(--space-8) var(--space-5); border-top: 1px solid var(--color-border); background: #697452 url(photos/rsvp-beach.jpeg) center 60% / cover no-repeat; text-shadow: 0 1px 3px rgba(43,41,38,0.9), 0 0 16px rgba(43,41,38,0.7), 0 0 36px rgba(43,41,38,0.45);">
-      <div style="max-width: 900px; margin: 0 auto;">
-        <div data-reveal style="text-align: center; margin-bottom: var(--space-6);">
-          <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">RSVP</x-import>
-          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE; font-size: clamp(44px, 5vw, 64px);">Kindly Reply by March 1, 2027</h2>
-          <p style="max-width: 54ch; margin: 0 auto; color: var(--color-text-muted);">{{ rsvpIntro }}</p>
-        </div>
-
-        <sc-if value="{{ rsvpDone }}" hint-placeholder-val="{{ false }}">
-          <div data-reveal data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-6); text-align: center;">
-            <h3 class="page-title" style="margin: 0 0 var(--space-3); font-size: 40px;">{{ thanksLine }}</h3>
-            <p style="max-width: 48ch; margin: 0 auto var(--space-5);">A confirmation is on its way. If anything changes, reply to that email and we will sort it out.</p>
-            <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.DetailList" items="{{ rsvpSummary }}" style="max-width: 520px; margin: 0 auto; text-align: left;" hint-size="100%,120px"></x-import>
-            <div style="margin-top: var(--space-5);">
-              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" variant="quiet" on-click="{{ onResetRsvp }}" hint-size="auto,40px">Change our reply</x-import>
-            </div>
-          </div>
-        </sc-if>
-
-        <sc-if value="{{ rsvpFormOpen }}" hint-placeholder-val="{{ true }}">
-          <div data-reveal data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5);">
-            <sc-if value="{{ rsvpStepped }}" hint-placeholder-val="{{ false }}">
-              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-3); margin-bottom: var(--space-5);">
-                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" hint-size="auto,16px">{{ stepLabel }}</x-import>
-                <span class="date-location" style="font-size: 20px;">{{ stepTitle }}</span>
-              </div>
-            </sc-if>
-
-            <div style="display: grid; grid-template-columns: {{ rsvpGridCols }}; gap: var(--space-5);">
-              <sc-for list="{{ rsvpCards }}" as="r" hint-placeholder-count="2">
-                <div style="border: 1px solid rgba(150,125,90,0.3); background: rgba(251,246,238,0.6); padding: var(--space-5);">
-                  <div class="caption" style="letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-date);">{{ r.kicker }}</div>
-                  <h3 class="section-title" style="margin: var(--space-2) 0 0;">{{ r.title }}</h3>
-                  <div class="date-location" style="font-size: 19px;">{{ r.date }}</div>
-                  <div style="margin-top: var(--space-3); border-top: 1px solid var(--color-border); padding-top: var(--space-2);">
-                    <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Radio" name="{{ r.name }}" id="{{ r.yesId }}" label="Joyfully accepts" checked="{{ r.yes }}" on-change="{{ r.onYes }}" hint-size="100%,44px"></x-import>
-                    <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Radio" name="{{ r.name }}" id="{{ r.noId }}" label="Regretfully declines" checked="{{ r.no }}" on-change="{{ r.onNo }}" hint-size="100%,44px"></x-import>
-                  </div>
-                  <div class="caption" style="margin-top: var(--space-2);">{{ r.seats }}</div>
-                </div>
-              </sc-for>
-            </div>
-
-            <sc-if value="{{ rsvpShowFields }}" hint-placeholder-val="{{ true }}">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-5);">
-                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Field" label="Your name" html-for="rsvp-name" hint-size="100%,76px">
-                  <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Input" id="rsvp-name" value="{{ fullName }}" read-only="{{ true }}" hint-size="100%,44px"></x-import>
-                </x-import>
-                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Field" label="Email" html-for="rsvp-email" hint="So we can send your confirmation." hint-size="100%,76px">
-                  <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Input" id="rsvp-email" type="email" value="{{ email }}" on-change="{{ onEmail }}" placeholder="you@email.com" hint-size="100%,44px"></x-import>
-                </x-import>
-              </div>
-              <div style="margin-top: var(--space-4);">
-                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Field" label="Anything we should know" html-for="rsvp-note" hint="Dietary needs, travel, a song you want played." hint-size="100%,140px">
-                  <textarea id="rsvp-note" rows="3" placeholder="Optional" style="width: 100%; box-sizing: border-box; font-family: var(--font-body); font-weight: 300; font-size: var(--text-body); resize: vertical;"></textarea>
-                </x-import>
-              </div>
-            </sc-if>
-
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-6);">
-              <span class="caption">{{ rsvpHint }}</span>
-              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" on-click="{{ onRsvpPrimary }}" hint-size="auto,48px">{{ rsvpCta }}</x-import>
-            </div>
-          </div>
-        </sc-if>
-      </div>
-    </section>
-
     <footer data-sage="true" style="border-top: 1px solid var(--color-border); padding: var(--space-7) var(--space-5) var(--space-6); text-align: center;">
       <img src="photos/ob-logo.svg" alt="OB logo" style="width: 130px; height: auto; display: block; margin: 0 auto var(--space-3); filter: brightness(0) invert(1);">
       <div style="font-family: var(--font-display); font-size: 38px; color: #FBF6EE; line-height: 1.1;">OB's Garden Party</div>
@@ -573,13 +504,11 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
 const SECTIONS = [
   ['home', 'Home'], ['story', 'Our story'], ['details', 'Details'], ['party', 'Wedding party'],
   ['travel', 'Travel'], ['todo', 'Things to do'], ['registry', 'Registry'], ['gallery', 'Gallery'],
-  ['faq', 'FAQ'], ['rsvp', 'RSVP']
+  ['faq', 'FAQ']
 ];
 
 const GUESTS = {
-  'amara okafor': { events: ['traditional', 'white'], seats: 2 },
-  'kelsey brandt': { events: ['white'], seats: 2 },
-  'chidi nwachukwu': { events: ['traditional'], seats: 1 }
+  'amara okafor': { events: ['traditional', 'white'], seats: 2 }
 };
 
 const EVENTS = {
@@ -618,15 +547,15 @@ const EVENTS = {
 };
 
 const HOTELS_LA = [
-  { name: 'Hotel June', area: 'West Los Angeles', note: 'Closest to the airport and easy on a Friday morning.', rate: 'Block not yet held' },
-  { name: 'Kimpton Everly', area: 'Hollywood', note: 'Good if you want to be near dinner and a walk afterwards.', rate: 'Block not yet held' },
-  { name: 'The LINE', area: 'Koreatown', note: 'Central, and a short ride to the traditional wedding.', rate: 'Block not yet held' }
+  { name: 'Torrance Marriott Redondo Beach', area: 'Torrance', note: 'About 10 minutes from the CMG Cultural Center in Gardena.', url: 'https://www.marriott.com/en-us/hotels/laxtr-torrance-marriott-redondo-beach/overview/', couple: true },
+  { name: 'DoubleTree by Hilton Hotel Torrance - South Bay', area: 'Torrance · South Bay', note: 'A short drive to the traditional ceremony and the beach cities.', url: 'https://www.hilton.com/en/hotels/laxthdt-doubletree-torrance-south-bay/' },
+  { name: 'Hilton Garden Inn Los Angeles/Redondo Beach', area: 'Redondo Beach', note: 'Close to Gardena, with the Redondo pier nearby.', url: 'https://www.hilton.com/en/hotels/laxrbgi-hilton-garden-inn-los-angeles-redondo-beach/' }
 ];
 
 const HOTELS_SB = [
-  { name: 'Kimpton Canary', area: 'Downtown Santa Barbara', note: 'Ten minutes from the Hilltop; walk to State Street.', rate: 'Block not yet held' },
-  { name: 'Hotel Californian', area: 'Funk Zone', note: 'By the water, next to the wine rooms.', rate: 'Block not yet held' },
-  { name: 'Hotel Milo', area: 'West Beach', note: 'The quieter, simpler option, right on the sand.', rate: 'Block not yet held' }
+  { name: 'Mar Monte Hotel', area: 'East Beach · The Unbound Collection by Hyatt', note: 'Across from East Beach and a short walk from the Santa Barbara Zoo.', url: 'https://www.hyatt.com/unbound-collection/en-US/sbars-mar-monte-hotel', couple: true },
+  { name: 'Hotel Californian', area: 'Funk Zone', note: 'By the water, next to the wine rooms.', url: 'https://www.hotelcalifornian.com/' },
+  { name: 'Hotel Milo', area: 'West Beach', note: 'The quieter, simpler option, right on the sand.', url: 'https://www.themilo.com/' }
 ];
 
 const TRANSPORT_LA = [
@@ -682,12 +611,11 @@ const MOH = { role: 'Maid of honour', name: 'Alexa Allegretti', photo: 'photos/p
 const BEST_MAN = { role: 'Best man', name: 'Xander Nanji', photo: 'photos/party-xander-nanji.png', pos: '51% 26%' };
 
 const BRIDESMAIDS = [
-  { role: 'Bridesmaid', name: 'Iris', photo: 'photos/party-a.png' },
-  { role: 'Bridesmaid', name: 'Oluchi', photo: 'photos/party-oluchi.png', pos: '50% 26%' },
-  { role: 'Bridesmaid', name: 'Stephanie Ibe', photo: 'photos/party-stephanie-ibe.png', pos: '50% 38%' },
-  { role: 'Bridesmaid', name: 'Andrea', photo: 'photos/party-andrea.png', pos: '45% 28%' },
-  { role: 'Bridesmaid', name: 'Vanessa', photo: 'photos/party-vanessa.png', pos: '48% 24%' },
-  { role: 'Bridesmaid', name: 'Adaugo', photo: 'photos/party-adaugo.png', pos: '45% 30%' }
+  { role: 'Bridesmaid', name: 'Oluchi Ibe', photo: 'photos/party-oluchi.png', pos: '50% 26%' },
+  { role: 'Bridesmaid', name: 'Stephanie Ibe', photo: 'photos/party-stephanie-ibe-v2.png', pos: '46% 28%' },
+  { role: 'Bridesmaid', name: 'Iris Lopez', photo: 'photos/party-a.png' },
+  { role: 'Bridesmaid', name: 'Andrea Withers', photo: 'photos/party-andrea.png', pos: '45% 28%' },
+  { role: 'Bridesmaid', name: 'Vanessa Klop', photo: 'photos/party-vanessa.png', pos: '48% 24%' }
 ];
 
 const GROOMSMEN = [
@@ -695,8 +623,8 @@ const GROOMSMEN = [
   { role: 'Groomsman', name: 'Charlton Azuoma', photo: 'photos/party-c.png' },
   { role: 'Groomsman', name: 'Ignacio Sedano', photo: 'photos/party-ignacio-sedano.png', pos: '50% 28%' },
   { role: 'Groomsman', name: 'Chinedu Asinugo', photo: 'photos/party-chinedu-asinugo.png', pos: '50% 22%' },
-  { role: 'Groomsman', name: 'Obi', photo: 'photos/party-obi.png', pos: '44% 28%' },
-  { role: 'Groomsman', name: 'Seneb', photo: 'photos/party-seneb.png', pos: '45% 42%' },
+  { role: 'Groomsman', name: 'Obi Asinugo', photo: 'photos/party-obi.png', pos: '44% 28%' },
+  { role: 'Groomsman', name: 'Seneb Holmes', photo: 'photos/party-seneb.png', pos: '45% 42%' },
   { role: 'Groomsman', name: 'Malcolm Zeger', photo: 'photos/party-malcolm-zeger.png', pos: '48% 18%' }
 ];
 
@@ -834,12 +762,11 @@ class Component extends DCLogic {
   verify = () => {
     const first = this.state.first.trim();
     const last = this.state.last.trim();
-    if (!first || !last) { this.setState({ gateError: true }); return; }
     const rec = GUESTS[(first + ' ' + last).toLowerCase()] || { events: ['traditional', 'white'], seats: 2 };
     const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
     this.setState({
       gateError: false, stage: 'site',
-      guest: { first: cap(first), name: cap(first) + ' ' + cap(last), events: rec.events, seats: rec.seats }
+      guest: { first: cap(first), name: [cap(first), cap(last)].filter(Boolean).join(' '), events: rec.events, seats: rec.seats }
     });
     window.scrollTo(0, 0);
     setTimeout(() => this.setupReveal(), 80);
@@ -921,11 +848,6 @@ class Component extends DCLogic {
       onFirstName: e => this.setState({ first: e.target.value, gateError: false }),
       onLastName: e => this.setState({ last: e.target.value, gateError: false }),
       gateError: s.gateError,
-      demoGuests: [
-        { label: 'Amara Okafor — both events', onPick: () => this.setState({ first: 'Amara', last: 'Okafor', gateError: false }) },
-        { label: 'Kelsey Brandt — white wedding only', onPick: () => this.setState({ first: 'Kelsey', last: 'Brandt', gateError: false }) },
-        { label: 'Chidi Nwachukwu — traditional only', onPick: () => this.setState({ first: 'Chidi', last: 'Nwachukwu', gateError: false }) }
-      ],
 
       storyArrowOpacity: s.storyHover ? '1' : '0',
       storyArrowEvents: s.storyHover ? 'auto' : 'none',
@@ -938,7 +860,7 @@ class Component extends DCLogic {
       onStoryPrev: () => this.setState({ storyIndex: ((s.storyIndex || 0) - 1 + STORY_SLIDES.length) % STORY_SLIDES.length, storyPaused: true }),
       onStoryNext: () => this.setState({ storyIndex: ((s.storyIndex || 0) + 1) % STORY_SLIDES.length, storyPaused: true }),
       navItems,
-      goRsvp: this.go('rsvp'),
+      goRsvp: () => window.open('https://www.zola.com/wedding/ogechiandbrandon/rsvp', '_blank', 'noopener'),
       railOpacity: s.railHover ? '1' : '0',
       onRailEnter: () => this.setState({ railHover: true }),
       onRailLeave: () => this.setState({ railHover: false, hovered: null }),
