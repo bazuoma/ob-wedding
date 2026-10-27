@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Ogechi &amp; Brandon · May 2027</title>
 <link rel="icon" href="photos/ob-logo.svg">
-<script>window.OB_VERSION='20261027105917';
+<script>window.OB_VERSION='20261027150022';
 fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
   if (!j.v || j.v === window.OB_VERSION) return;
   var key = 'ob-reloaded-' + j.v;
@@ -75,7 +75,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
   #party .caption { background: rgba(251,246,238,0.82); padding: 2px 12px 4px; font-size: 12px !important; }
   #party [data-doily] dt, #party [data-doily] dd { color: inherit; }
   #details dd { white-space: pre-line; }
-  #details [data-doily] dt, #details [data-doily] dd { font-weight: 700 !important; font-synthesis: weight; }
+  #crew [data-doily] dt, #crew [data-doily] dd, #details [data-doily] dt, #details [data-doily] dd { font-weight: 700 !important; font-synthesis: weight; }
   dl > div { grid-template-columns: minmax(0, 1fr) !important; gap: 2px !important; text-align: center; }
   [data-doily] {
     text-shadow: none;
@@ -106,6 +106,58 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
 </helmet>
 
 <div style="position: relative; background: var(--color-bg); font-family: var(--font-body); color: var(--color-text-body);">
+
+  <sc-if value="{{ crewOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Wedding party page" style="position: fixed; inset: 0; z-index: 95; background: #697452 url(photos/opt/gate-garden-v3-m.jpg) center top / cover no-repeat; overflow-x: hidden; overflow-y: auto;">
+      <button type="button" data-plain="true" onClick="{{ onCrewClose }}" style="position: fixed; top: 16px; left: 16px; z-index: 3; min-height: 44px; padding: 0 18px; border: 1px solid rgba(251,246,238,0.6); background: rgba(105,116,82,0.9); color: #FBF6EE; font-family: var(--font-body); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Back to the site</button>
+      <sc-if value="{{ crewAtLock }}" hint-placeholder-val="{{ true }}">
+        <div data-crew-lock="true" style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-4); padding: var(--space-8) var(--space-4) var(--space-6);">
+          <h2 class="page-title" style="margin: 0; text-align: center; font-size: clamp(44px, 7vw, 72px); line-height: 1.1; color: #FBF6EE; text-shadow: 0 1px 2px rgba(43,41,38,0.95), 0 0 14px rgba(43,41,38,0.85), 0 0 32px rgba(43,41,38,0.6);">{{ crewGreeting }}</h2>
+          <div class="date-location" style="font-size: 22px; text-align: center; color: #FBF6EE; text-shadow: 0 1px 2px rgba(43,41,38,0.95), 0 0 14px rgba(43,41,38,0.85), 0 0 32px rgba(43,41,38,0.6); font-weight: 700; font-synthesis: weight;">For the wedding party only</div>
+          <div style="position: relative; display: flex; flex-direction: column; align-items: center; margin: var(--space-2) 0;">
+            <img id="crew-shackle" src="photos/gold-lock.png" alt="Gold lock" style="position: relative; z-index: 2; height: 152px; width: auto; display: block;">
+            <div style="position: relative; z-index: 1; width: 128px; height: 52px; display: flex; align-items: center; justify-content: center; margin-top: 4px;">
+              <img id="crew-key" src="photos/gold-key.png" alt="Gold key" style="height: 109px; width: auto; display: block; transform: rotate(-90deg); transform-origin: 50% 50%;">
+            </div>
+          </div>
+          <div data-doily="true" style="width: 340px; max-width: 86vw; box-sizing: border-box; border: 40px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-3); text-align: center;">
+            <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Field" label="Password" html-for="crew-pass" hint-size="100%,76px">
+              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Input" id="crew-pass" type="password" autocomplete="off" value="{{ crewPass }}" on-change="{{ onCrewPass }}" on-key-down="{{ onCrewKey }}" hint-size="100%,44px"></x-import>
+            </x-import>
+            <sc-if value="{{ crewError }}">
+              <p style="margin: 0; color: var(--color-error); font-size: var(--text-body-sm);">That password is not quite right. Try again.</p>
+            </sc-if>
+            <sc-if value="{{ crewHasPass }}">
+              <div style="animation: obFadeUp 0.4s ease both;">
+                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" on-click="{{ onCrewUnlock }}" full-width="{{ true }}" hint-size="100%,48px">Unlock</x-import>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ crewAtPage }}" hint-placeholder-val="{{ false }}">
+        <div id="crew" data-sage="true" style="min-height: 100%; box-sizing: border-box; padding: var(--space-8) var(--space-4) var(--space-7); animation: obFadeUp 0.6s ease both;">
+          <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-5);">
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-2);">
+              <img src="photos/ob-logo.svg" alt="OB logo" style="width: 110px; height: auto; display: block; filter: brightness(0) invert(1); margin-bottom: var(--space-2);">
+              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Wedding party</x-import>
+              <h2 class="page-title" style="margin: 0; font-size: clamp(44px, 7vw, 72px); line-height: 1.1; color: #FBF6EE;">{{ crewGreeting }}</h2>
+              <p style="margin: 0; max-width: 52ch; color: #FBF6EE;">Thank you for standing with us. Here is everything on the calendar for the wedding party, in order.</p>
+            </div>
+            <sc-for list="{{ crewEvents }}" as="e" hint-placeholder-count="5">
+              <div data-doily="true" style="border: 40px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 40px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-4); text-align: center;">
+                <h3 class="page-title" style="margin: 0 0 var(--space-2); font-size: 34px; line-height: 1.15;">{{ e.title }}</h3>
+                <div class="date-location" style="font-size: 20px; color: #697452;">{{ e.when }}</div>
+                <div style="margin-top: var(--space-3);">
+                  <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.DetailList" items="{{ e.details }}" style="text-align: left;" hint-size="100%,120px"></x-import>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
 
   <sc-if value="{{ gateOpen }}" hint-placeholder-val="{{ true }}">
     <div style="position: fixed; inset: 0; z-index: 90; background: var(--color-bg) url(photos/opt/gate-garden-v3-m.jpg) center top / cover no-repeat; display: flex; align-items: flex-start; justify-content: center; overflow-x: hidden; overflow-y: auto;">
@@ -269,7 +321,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="Her Side" hint-size="100%,40px"></x-import>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: var(--space-5);">
             <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt);">
-              <img data-src="{{ moh.photo }}" alt="{{ moh.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ moh.pos }}; display: block;">
+              <img onClick="{{ mohOpen }}" data-src="{{ moh.photo }}" alt="{{ moh.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ moh.pos }}; display: block;">
             </div>
             <div class="subsection-title" style="font-size: var(--text-body-sm);">{{ moh.name }}</div>
             <div class="caption" style="letter-spacing: 0.12em; text-transform: uppercase;">{{ moh.role }}</div>
@@ -277,7 +329,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
           <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); margin-top: var(--space-4);">
             <sc-for list="{{ bridesmaids }}" as="p" hint-placeholder-count="6">
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-                <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
+                <div onClick="{{ p.onOpen }}" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
                   <sc-if value="{{ p.photo }}" hint-placeholder-val="{{ false }}">
                     <img data-src="{{ p.photo }}" alt="{{ p.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ p.pos }}; display: block;">
                   </sc-if>
@@ -295,7 +347,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="His Side" hint-size="100%,40px"></x-import>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: var(--space-5);">
             <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt);">
-              <img data-src="{{ bestMan.photo }}" alt="{{ bestMan.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ bestMan.pos }}; display: block;">
+              <img onClick="{{ bestManOpen }}" data-src="{{ bestMan.photo }}" alt="{{ bestMan.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ bestMan.pos }}; display: block;">
             </div>
             <div class="subsection-title" style="font-size: var(--text-body-sm);">{{ bestMan.name }}</div>
             <div class="caption" style="letter-spacing: 0.12em; text-transform: uppercase;">{{ bestMan.role }}</div>
@@ -303,7 +355,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
           <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); margin-top: var(--space-4);">
             <sc-for list="{{ groomsmen }}" as="p" hint-placeholder-count="8">
               <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-                <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
+                <div onClick="{{ p.onOpen }}" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center;">
                   <sc-if value="{{ p.photo }}" hint-placeholder-val="{{ false }}">
                     <img data-src="{{ p.photo }}" alt="{{ p.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ p.pos }}; display: block;">
                   </sc-if>
@@ -628,6 +680,26 @@ const STORY_SLIDES = [
 
 const TARGET = new Date('2027-05-30T16:00:00-07:00').getTime();
 
+const CREW_EVENTS = [
+  { title: 'Anglican Wedding', when: 'Friday, November 27, 2026 · Hawthorne, CA', details: [
+    { label: 'What', value: 'The Holy Matrimony of Ogechi Hippolyte & Brandon Azuoma.' },
+    { label: 'Time', value: 'Begins at 12:00pm.' },
+    { label: 'Place', value: 'All Saints Anglican Church, Hawthorne, CA.' }
+  ] },
+  { title: 'Catholic Wedding', when: 'Saturday, November 28, 2026 · Woodland Hills, CA', details: [
+    { label: 'What', value: 'The Sacrament of Holy Matrimony of Ogechi Hippolyte & Brandon Azuoma.' },
+    { label: 'Time', value: 'Begins at 11:30am.' },
+    { label: 'Place', value: 'Saint Mel Catholic Church\n20870 Ventura Blvd, Woodland Hills, CA.' },
+    { label: 'Reception', value: 'To follow in Woodland Hills — address shared with the wedding party directly.' }
+  ] },
+  { title: 'Jack & Jill', when: 'March 19–21, 2027 · Las Vegas, NV', details: [
+    { label: 'What', value: 'Our joint bachelor and bachelorette weekend.' },
+    { label: 'Stay', value: 'We are staying at MGM Grand\n3799 S Las Vegas Blvd, Las Vegas, NV 89109.' }
+  ] },
+  { title: EVENTS.traditional.title, when: EVENTS.traditional.date + ' · ' + EVENTS.traditional.loc, details: EVENTS.traditional.details },
+  { title: EVENTS.white.title, when: EVENTS.white.date + ' · ' + EVENTS.white.loc, details: EVENTS.white.details }
+];
+
 class Component extends DCLogic {
   state = {
     stage: 'lock',
@@ -717,13 +789,10 @@ class Component extends DCLogic {
     setTimeout(() => nodes.forEach(n => { n.style.opacity = '1'; n.style.transform = 'none'; }), 4000);
   }
 
-  unlock = () => {
-    if (this.state.unlocking) return;
-    if ((this.state.password || '').trim().toLowerCase() !== 'obgardenparty') { this.setState({ gateError: true }); return; }
-    this.setState({ unlocking: true, gateError: false });
-    const key = document.getElementById('ob-key');
-    const shackle = document.getElementById('ob-shackle');
-    const panel = document.querySelector('[data-gate-lock]');
+  playKey = (kid, sid, psel) => {
+    const key = document.getElementById(kid);
+    const shackle = document.getElementById(sid);
+    const panel = document.querySelector(psel);
     if (key && shackle && key.animate) {
       key.style.transform = 'none';
       const k = key.getBoundingClientRect(), l = shackle.getBoundingClientRect();
@@ -744,6 +813,35 @@ class Component extends DCLogic {
     }
     if (shackle) shackle.style.animation = 'obShackle 0.6s 2s cubic-bezier(.3,0,.2,1) forwards';
     if (panel) panel.style.animation = 'obFadeOut 0.6s 2.6s ease forwards';
+  };
+
+  openCrew = p => () => {
+    const first = (p.name || '').split(' ')[0] || 'friend';
+    this.setState({ crew: { first, step: this.state.crewUnlocked ? 'page' : 'lock' }, crewPass: '', crewError: false });
+    document.body.style.overflow = 'hidden';
+  };
+
+  closeCrew = () => {
+    this.setState({ crew: null, crewUnlocking: false });
+    document.body.style.overflow = '';
+  };
+
+  crewUnlock = () => {
+    if (this.state.crewUnlocking) return;
+    if ((this.state.crewPass || '').trim().toLowerCase() !== 'gardenparty') { this.setState({ crewError: true }); return; }
+    this.setState({ crewUnlocking: true, crewError: false });
+    this.playKey('crew-key', 'crew-shackle', '[data-crew-lock]');
+    setTimeout(() => {
+      if (!this.state.crew) return;
+      this.setState(s => ({ crewUnlocking: false, crewUnlocked: true, crew: { ...s.crew, step: 'page' } }));
+    }, 3200);
+  };
+
+  unlock = () => {
+    if (this.state.unlocking) return;
+    if ((this.state.password || '').trim().toLowerCase() !== 'ob2027') { this.setState({ gateError: true }); return; }
+    this.setState({ unlocking: true, gateError: false });
+    this.playKey('ob-key', 'ob-shackle', '[data-gate-lock]');
     setTimeout(() => {
       this.setState({ unlocking: false });
       this.verify();
@@ -751,7 +849,7 @@ class Component extends DCLogic {
   };
 
   verify = () => {
-    if ((this.state.password || '').trim().toLowerCase() !== 'obgardenparty') { this.setState({ gateError: true }); return; }
+    if ((this.state.password || '').trim().toLowerCase() !== 'ob2027') { this.setState({ gateError: true }); return; }
     this.setState({ gateError: false, stage: 'site', guest: { first: '', name: '', events: ['traditional', 'white'], seats: 2 } });
     window.scrollTo(0, 0);
     setTimeout(() => this.setupReveal(), 80);
@@ -823,6 +921,20 @@ class Component extends DCLogic {
 
     return {
       gateOpen: s.stage !== 'site',
+      crewOpen: !!s.crew,
+      crewAtLock: !!s.crew && s.crew.step === 'lock',
+      crewAtPage: !!s.crew && s.crew.step === 'page',
+      crewGreeting: 'Hey ' + ((s.crew && s.crew.first) || ''),
+      crewPass: s.crewPass || '',
+      crewHasPass: !!(s.crewPass || '').trim(),
+      crewError: !!s.crewError,
+      onCrewPass: e => this.setState({ crewPass: e.target.value, crewError: false }),
+      onCrewKey: e => { if (e.key === 'Enter') this.crewUnlock(); },
+      onCrewUnlock: this.crewUnlock,
+      onCrewClose: this.closeCrew,
+      crewEvents: CREW_EVENTS,
+      mohOpen: this.openCrew(MOH),
+      bestManOpen: this.openCrew(BEST_MAN),
       atLock: s.stage === 'lock',
       atVerify: s.stage === 'verify',
       siteOpen: s.stage === 'site',
@@ -866,8 +978,8 @@ class Component extends DCLogic {
         : 'You are invited to both. The traditional wedding in Los Angeles on the Friday, and the white wedding at the Hilltop on the Sunday.',
 
       moh: MOH, bestMan: BEST_MAN,
-      bridesmaids: BRIDESMAIDS.map(p => ({ role: p.role, photo: p.photo, pos: p.pos || '50% 50%', empty: !p.photo, name: p.name || 'Name to come' })),
-      groomsmen: GROOMSMEN.map(p => ({ role: p.role, photo: p.photo, pos: p.pos || '50% 50%', empty: !p.photo, name: p.name || 'Name to come' })),
+      bridesmaids: BRIDESMAIDS.map(p => ({ role: p.role, photo: p.photo, pos: p.pos || '50% 50%', empty: !p.photo, name: p.name || 'Name to come', onOpen: this.openCrew(p) })),
+      groomsmen: GROOMSMEN.map(p => ({ role: p.role, photo: p.photo, pos: p.pos || '50% 50%', empty: !p.photo, name: p.name || 'Name to come', onOpen: this.openCrew(p) })),
 
       travelIntro: only
         ? 'Where to stay near the ' + only.title + ', and how to get around once you are there.'

@@ -31,6 +31,15 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
   fi
 done
 
+# Keep the private reception address off the public site (the page source
+# and this public repo are readable by anyone, passwords or not).
+# Matches any street number so the address itself never appears in this file.
+sed -i '' -E "s/To follow at [0-9][^']*, Woodland Hills, CA\./To follow in Woodland Hills — address shared with the wedding party directly./" desktop.html mobile.html
+if grep -qE "Reception', value: '[^']*[0-9]{3,}" desktop.html mobile.html; then
+  echo "WARNING: a reception street address is still in a page — the wording probably changed in Claude Design. Check before publishing." >&2
+  exit 1
+fi
+
 sed -i '' -E "s/window\.OB_VERSION='[0-9]+'/window.OB_VERSION='$V'/" index.html desktop.html mobile.html
 printf '{"v":"%s"}\n' "$V" > version.json
 echo "Stamped version $V"
