@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Ogechi &amp; Brandon · May 2027</title>
 <link rel="icon" href="photos/ob-logo.svg">
-<script>window.OB_VERSION='20261027150022';
+<script>window.OB_VERSION='20261028105213';
 fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
   if (!j.v || j.v === window.OB_VERSION) return;
   var key = 'ob-reloaded-' + j.v;
@@ -384,7 +384,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
         </div>
         <div data-reveal role="note" style="max-width: 760px; margin: 0 auto var(--space-6); padding: var(--space-3) var(--space-4); background: #932F51; border: 1px solid #932F51; color: #FBF6EE; text-align: center; display: flex; flex-direction: column; gap: 4px;">
           <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #F3B651;">Please book early</div>
-          <p style="margin: 0; font-size: var(--text-body-sm); font-weight: 600; color: #FBF6EE; text-shadow: none;">We were unable to secure room blocks, so please book your stay as early as possible.</p>
+          <p style="margin: 0; font-size: var(--text-body-sm); font-weight: 600; color: #FBF6EE; text-shadow: none;">Because the wedding falls on Memorial Day Weekend, a holiday weekend, we were unable to secure room blocks. Please book your stay as early as possible.</p>
         </div>
         <sc-for list="{{ travelCities }}" as="city" hint-placeholder-count="2">
           <div data-reveal style="margin-top: var(--space-6);">
@@ -588,13 +588,23 @@ const EVENTS = {
 const HOTELS_LA_RAW = [
   { name: 'Torrance Marriott Redondo Beach', area: 'Torrance', note: 'About 10 minutes from the CMG Cultural Center in Gardena.', url: 'https://www.marriott.com/en-us/hotels/laxtr-torrance-marriott-redondo-beach/overview/', couple: true },
   { name: 'DoubleTree by Hilton Hotel Torrance - South Bay', area: 'Torrance · South Bay', note: 'A short drive to the traditional ceremony and the beach cities.', url: 'https://www.hilton.com/en/hotels/laxthdt-doubletree-torrance-south-bay/' },
-  { name: 'Hilton Garden Inn Los Angeles/Redondo Beach', area: 'Redondo Beach', note: 'Close to Gardena, with the Redondo pier nearby.', url: 'https://www.hilton.com/en/hotels/laxrbgi-hilton-garden-inn-los-angeles-redondo-beach/' }
+  { name: 'Hilton Garden Inn Los Angeles/Redondo Beach', area: 'Redondo Beach', note: 'Close to Gardena, with the Redondo pier nearby.', url: 'https://www.hilton.com/en/hotels/laxrbgi-hilton-garden-inn-los-angeles-redondo-beach/' },
+  { name: 'New Gardena Hotel', area: 'Gardena · 1 mi from the venue', note: 'Well reviewed, with a secured parking garage and Japanese and American breakfast.', url: 'https://www.newgardenahotel.com' },
+  { name: 'Best Western Plus Gardena Inn & Suites', area: 'Gardena · 1.3 mi from the venue', note: 'Recently renovated, with free breakfast and parking.', url: 'https://www.bestwestern.com/en_US/book/hotel-details.05730.html' },
+  { name: 'Hotel Pacific Garden', area: 'Gardena · 1 mi from the venue', note: 'The closest budget option to the CMG Cultural Center.', url: 'https://www.hotels.com/ho3336209344/hotel-pacific-garden-gardena-united-states-of-america' },
+  { name: 'Hampton Inn Los Angeles/Carson/Torrance', area: 'Carson · 2 mi from the venue', note: 'Free hot breakfast, an outdoor pool and plenty of parking.', url: 'https://www.hilton.com/en/hotels/csncahx-hampton-los-angeles-carson-torrance/' },
+  { name: 'Sonesta Select LA Torrance South Bay', area: 'Torrance · 2.7 mi from the venue', note: 'A simple, comfortable stay a short drive from Gardena.', url: 'https://www.sonesta.com/sonesta-select/ca/torrance/sonesta-select-los-angeles-torrance-south-bay' },
+  { name: 'DoubleTree by Hilton Hotel Carson', area: 'Carson · 4.5 mi from the venue', note: 'Pool with cabanas and firepits, plus a restaurant and sports bar. Paid parking.', url: 'https://www.hilton.com/en/hotels/lgbchdt-doubletree-carson/' }
 ];
 
 const HOTELS_SB_RAW = [
-  { name: 'Mar Monte Hotel', area: 'East Beach · The Unbound Collection by Hyatt', note: 'Across from East Beach and a short walk from the Santa Barbara Zoo.', url: 'https://www.hyatt.com/unbound-collection/en-US/sbars-mar-monte-hotel', couple: true },
-  { name: 'Hilton Santa Barbara Beachfront Resort', area: 'East Beach', note: 'Across from East Beach and about half a mile from the Santa Barbara Zoo.', url: 'https://www.hilton.com/en/hotels/sbafphh-hilton-santa-barbara-beachfront-resort/' },
-  { name: 'Hotel Milo', area: 'West Beach', note: 'The quieter, simpler option, right on the sand.', url: 'https://be.synxis.com/?Hotel=42612&Chain=6255&arrive=2027-05-29&depart=2027-05-31&adult=2&child=0&promo=OBWED27', cta: 'Book Now' }
+  { name: 'Mar Monte Hotel', area: 'East Beach · 0.3 mi from the zoo · The Unbound Collection by Hyatt', note: 'Across from East Beach and a short walk from the Santa Barbara Zoo.', url: 'https://www.hyatt.com/unbound-collection/en-US/sbars-mar-monte-hotel', couple: true },
+  { name: 'Hilton Santa Barbara Beachfront Resort', area: 'East Beach · 0.7 mi from the zoo', note: 'Across from East Beach and about half a mile from the Santa Barbara Zoo.', url: 'https://www.hilton.com/en/hotels/sbafphh-hilton-santa-barbara-beachfront-resort/' },
+  { name: 'Hotel Milo', area: 'West Beach · 1.7 mi from the zoo', note: 'The quieter, simpler option, right on the sand.', url: 'https://be.synxis.com/?Hotel=42612&Chain=6255&arrive=2027-05-29&depart=2027-05-31&adult=2&child=0&promo=OBWED27', cta: 'Book Now' },
+  { name: 'Santa Barbara Inn', area: 'East Beach · 0.45 mi from the zoo', note: 'Boutique hotel with continental breakfast included. Walkable to the zoo.', url: 'https://www.santabarbarainn.com' },
+  { name: 'The Inn at East Beach', area: 'East Beach · 0.3 mi from the zoo', note: 'The closest budget pick, about a five minute walk to the zoo.', url: 'https://www.booking.com/hotel/us/inn-at-east-beach.html' },
+  { name: 'Cabrillo Inn at the Beach', area: 'East Beach · 0.4 mi from the zoo', note: 'Across from East Beach, with free breakfast and parking.', url: 'https://www.booking.com/hotel/us/cabrillo-inn-at-the-beach.html' },
+  { name: 'Pacific Crest Hotel', area: 'East Beach · 0.35 mi from the zoo', note: 'Renovated in 2024, with free parking.', url: 'https://www.expedia.com/Santa-Barbara-Hotels-Pacific-Crest-Hotel-Santa-Barbara.h915130.Hotel-Information' }
 ];
 const withCta = l => l.map(x => ({ ...x, cta: x.cta || 'Visit Website' }));
 const HOTELS_LA = withCta(HOTELS_LA_RAW);

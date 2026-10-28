@@ -7,6 +7,9 @@
 #   its own version with version.json and reloads itself if it is out of
 #   date. This matters for in-app browsers (Messages, Instagram, Gmail…),
 #   which keep old copies of pages around.
+# - Hides the private reception address.
+# - Points the pages at optimized photos, deletes unused photos, and checks
+#   every referenced photo exists.
 # - Stamps a new version into index.html, both pages and version.json.
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -39,6 +42,41 @@ if grep -qE "Reception', value: '[^']*[0-9]{3,}" desktop.html mobile.html; then
   echo "WARNING: a reception street address is still in a page — the wording probably changed in Claude Design. Check before publishing." >&2
   exit 1
 fi
+
+# Use the pre-sized copy in photos/opt/ whenever the pages point at a full-size
+# original that has one (Claude Design sometimes reverts to the originals).
+for f in desktop.html mobile.html; do
+  for p in $(grep -oE "photos/[a-z0-9-]+\.(png|jpe?g)" "$f" | sort -u); do
+    b=$(basename "$p"); b="${b%.*}"
+    if [ -f "photos/opt/$b.jpg" ]; then
+      sed -i '' "s#$p#photos/opt/$b.jpg#g" "$f"
+    fi
+  done
+done
+
+# Delete photos nothing references any more (matched by exact path, including
+# photos/opt/), then shrink any remaining top-level photo over 2400px.
+removed=0
+while IFS= read -r p; do
+  if ! grep -rqF --exclude-dir=.git --exclude-dir=photos "$p" .; then
+    rm "$p"; removed=$((removed + 1))
+  fi
+done < <(find photos -type f)
+echo "Removed $removed unused photos"
+while IFS= read -r p; do
+  w=$(sips -g pixelWidth "$p" | awk '/pixelWidth/{print $2}')
+  h=$(sips -g pixelHeight "$p" | awk '/pixelHeight/{print $2}')
+  if [ "$w" -gt 2400 ] || [ "$h" -gt 2400 ]; then sips -Z 2400 "$p" >/dev/null; echo "Resized $p"; fi
+done < <(find photos -maxdepth 1 -type f \( -name '*.jpeg' -o -name '*.jpg' -o -name '*.png' \))
+
+# Every photo the pages reference must exist.
+missing=0
+for f in index.html desktop.html mobile.html; do
+  for p in $(grep -oE "photos/[^'\")> ]*" "$f" | sort -u); do
+    [ -f "$p" ] || { echo "MISSING in $f: $p" >&2; missing=1; }
+  done
+done
+[ "$missing" -eq 0 ] || exit 1
 
 sed -i '' -E "s/window\.OB_VERSION='[0-9]+'/window.OB_VERSION='$V'/" index.html desktop.html mobile.html
 printf '{"v":"%s"}\n' "$V" > version.json
