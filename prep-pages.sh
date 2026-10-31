@@ -7,7 +7,9 @@
 #   its own version with version.json and reloads itself if it is out of
 #   date. This matters for in-app browsers (Messages, Instagram, Gmail…),
 #   which keep old copies of pages around.
+# - Makes sure the site starts at the password screen.
 # - Hides the private reception address.
+# - Lets auto-fit grid columns shrink on narrow phones.
 # - Points the pages at optimized photos, deletes unused photos, and checks
 #   every referenced photo exists.
 # - Stamps a new version into index.html, both pages and version.json.
@@ -42,6 +44,23 @@ if grep -qE "Reception', value: '[^']*[0-9]{3,}" desktop.html mobile.html; then
   echo "WARNING: a reception street address is still in a page — the wording probably changed in Claude Design. Check before publishing." >&2
   exit 1
 fi
+
+# The published site must always start at the password screen. Claude Design's
+# "startUnlocked" preview setting skips it, and V12 shipped with it on for
+# desktop only. Handles both the spaced and compact forms of the setting.
+sed -i '' -E 's/(startUnlocked&quot;: ?\{[^}]*&quot;default&quot;: ?)true/\1false/' desktop.html mobile.html
+if grep -qE 'startUnlocked&quot;: ?\{[^}]*&quot;default&quot;: ?true' desktop.html mobile.html; then
+  echo "ERROR: startUnlocked is still on — the site would skip the password screen." >&2
+  exit 1
+fi
+for f in desktop.html mobile.html; do
+  grep -qE 'startUnlocked&quot;: ?\{[^}]*&quot;default&quot;: ?false' "$f" || { echo "ERROR: couldn't confirm startUnlocked is off in $f." >&2; exit 1; }
+done
+
+# Auto-fit grids with a fixed px minimum overflow on phones when the space is
+# narrower than that minimum (V12's attire columns ran under the lace border).
+# Capping the minimum at 100% lets columns shrink; wider screens are unchanged.
+sed -i '' -E 's/repeat\(auto-(fit|fill), minmax\(([0-9]+px), 1fr\)\)/repeat(auto-\1, minmax(min(\2, 100%), 1fr))/g' desktop.html mobile.html
 
 # Use the pre-sized copy in photos/opt/ whenever the pages point at a full-size
 # original that has one (Claude Design sometimes reverts to the originals).

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Ogechi &amp; Brandon · May 2027</title>
 <link rel="icon" href="photos/ob-logo.svg">
-<script>window.OB_VERSION='20261028105213';
+<script>window.OB_VERSION='20261030173124';
 fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
   if (!j.v || j.v === window.OB_VERSION) return;
   var key = 'ob-reloaded-' + j.v;
@@ -25,7 +25,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
 <link rel="stylesheet" href="_ds/ogechi-brandon-wedding-design-system-218db63d-4934-450c-9997-38d6d9081ae0/base/base.css">
 <link rel="stylesheet" href="_ds/ogechi-brandon-wedding-design-system-218db63d-4934-450c-9997-38d6d9081ae0/styles.css">
 <script src="_ds/ogechi-brandon-wedding-design-system-218db63d-4934-450c-9997-38d6d9081ae0/_ds_bundle.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Antic+Didone&family=Monsieur+La+Doulaise&family=Pinyon+Script&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oranienbaum&amp;family=Antic+Didone&amp;family=Monsieur+La+Doulaise&amp;family=Pinyon+Script&amp;family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&amp;display=swap">
 <link rel="preload" href="fonts/BeauRivage-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="fonts/Explora-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="fonts/Italiana-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -93,6 +93,10 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
   section h2.page-title, section h2.hero-name { -webkit-text-stroke: 0.025em currentColor; paint-order: stroke fill; }
   #travel h3.section-title { font-size: 40px !important; font-weight: 700 !important; font-synthesis: weight; -webkit-text-stroke: 0.025em currentColor; paint-order: stroke fill; }
   #todo .sc-host-x > div > span:nth-child(2):nth-last-child(2) { font-size: 36px !important; line-height: 1.1 !important; }
+  #details [data-doily] h3 { color: #6E1F3B !important; -webkit-text-stroke: 0.6px #6E1F3B; paint-order: stroke fill; }
+  #details [data-doily] .date-location { color: #4F5A3A !important; font-weight: 700; font-synthesis: weight; -webkit-text-stroke: 0.4px #4F5A3A; }
+  #details [data-doily] dt { color: #6E1F3B !important; }
+  #party [data-divider-label], #party [role="separator"] span { }
   [data-hotel-link] a { border-bottom: none; text-decoration: none; box-sizing: border-box; padding: 12px 10px !important; font-size: 11px !important; letter-spacing: 0.06em !important; line-height: 1.3; text-align: center; }
   button:not([data-plain]), a[href*="zola.com"], [data-hotel-link] a { position: relative; border-radius: 8px !important; }
   button:not([data-plain])::after, a[href*="zola.com"]::after, [data-hotel-link] a::after {
@@ -164,7 +168,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
     <div style="position: fixed; inset: 0; z-index: 90; background: var(--color-bg) url(photos/opt/gate-garden-v3-d.jpg) center top / cover no-repeat; display: flex; align-items: flex-start; justify-content: center; overflow-x: hidden; overflow-y: auto;">
 
       <sc-if value="{{ atLock }}" hint-placeholder-val="{{ true }}">
-        <div data-gate-lock style="display: flex; flex-direction: column; align-items: center; gap: var(--space-4); padding: 210px var(--space-5) var(--space-5); margin: auto;">
+        <div data-gate-lock="" style="display: flex; flex-direction: column; align-items: center; gap: var(--space-4); padding: 210px var(--space-5) var(--space-5); margin: auto;">
           <div style="position: absolute; top: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px;">
             <div style="display: flex; align-items: center; justify-content: center;">
               <img src="photos/ob-logo.svg" alt="OB logo" style="width: 186px; height: auto; display: block;">
@@ -215,10 +219,10 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
     </nav>
 
     <section id="home" data-screen-label="Home" style="position: relative; min-height: 150vh; overflow: hidden; display: flex; align-items: flex-start; justify-content: center;">
-      <div data-parallax style="position: absolute; inset: -14% 0 0 0; will-change: transform;">
+      <div data-parallax="" style="position: absolute; inset: -14% 0 0 0; will-change: transform;">
         <img src="photos/opt/hero-beach-d.jpg" alt="Ogechi and Brandon on the beach" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block;">
       </div>
-      <div data-reveal style="position: relative; width: 1100px; max-width: 94vw; margin: var(--space-6) 0 0; color: var(--color-bg); text-shadow: 0 1px 3px rgba(43,41,38,0.9), 0 0 22px rgba(43,41,38,0.6), 0 0 60px rgba(43,41,38,0.4);">
+      <div data-reveal="" style="position: relative; width: 1100px; max-width: 94vw; margin: var(--space-6) 0 0; color: var(--color-bg); text-shadow: 0 1px 3px rgba(43,41,38,0.9), 0 0 22px rgba(43,41,38,0.6), 0 0 60px rgba(43,41,38,0.4);">
         <h1 style="margin: 0; font-weight: 400; color: var(--color-bg); display: flex; flex-direction: column;">
           <span style="align-self: flex-start; padding-left: 4%; font-family: 'Beau Rivage', cursive; font-weight: 400; font-size: clamp(110px, 14vw, 210px); line-height: 1.05; letter-spacing: 0;">Ogechi</span>
           <span style="align-self: center; font-family: 'Beau Rivage', cursive; font-weight: 400; font-size: clamp(64px, 7vw, 104px); line-height: 1; margin: 0.05em 0;">&amp;</span>
@@ -236,13 +240,13 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
 
     <section id="story" data-sage="true" data-screen-label="Our story" style="padding: 0; border-top: 1px solid var(--color-border);">
       <div style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 1fr); align-items: center;">
-        <div data-reveal style="position: relative; min-width: 0;">
+        <div data-reveal="" style="position: relative; min-width: 0;">
           <div onMouseEnter="{{ onStoryEnter }}" onMouseLeave="{{ onStoryLeave }}" style="position: relative; overflow: hidden; height: min(82vh, 52vw); background: var(--color-bg-alt);">
             <div style="display: flex; height: 100%; transition: transform 0.7s cubic-bezier(.22,.61,.36,1); transform: translateX({{ storyOffset }});">
               <sc-for list="{{ storySlides }}" as="s" hint-placeholder-count="1">
                 <div style="flex: 0 0 100%; height: 100%; position: relative;">
                   <sc-if value="{{ s.src }}" hint-placeholder-val="{{ false }}">
-                    <img data-src="{{ s.src }}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ s.pos }}; display: block;">
+                    <img data-src="{{ s.src }}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ s.pos }}; display: block">
                   </sc-if>
                   <sc-if value="{{ s.empty }}" hint-placeholder-val="{{ true }}">
                     <div style="position: absolute; inset: var(--space-4); border: 1px dashed var(--color-border); display: flex; align-items: center; justify-content: center;">
@@ -256,7 +260,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
             <button type="button" data-plain="true" onClick="{{ onStoryNext }}" aria-label="Next photo" style="opacity: {{ storyArrowOpacity }}; pointer-events: {{ storyArrowEvents }}; transition: opacity 0.25s ease; position: absolute; right: var(--space-5); top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-heading); font-family: var(--font-body); font-size: 22px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="background: var(--color-bg-alt);">→</button>
           </div>
         </div>
-        <div data-reveal style="min-width: 0; padding: var(--space-5) var(--space-5) var(--space-5) var(--space-5); display: flex; flex-direction: column; justify-content: center; gap: var(--space-3); text-align: left;">
+        <div data-reveal="" style="min-width: 0; padding: var(--space-5) var(--space-5) var(--space-5) var(--space-5); display: flex; flex-direction: column; justify-content: center; gap: var(--space-3); text-align: left;">
           <div>
             <h2 class="hero-name" style="margin: 0; font-size: clamp(30px, 2.8vw, 42px); line-height: 1.1; color: #FBF6EE;">Our Story</h2>
             <div class="date-location" style="font-size: clamp(16px, 1.3vw, 20px); line-height: 1.3; margin-top: 4px;">Valley Girl Meets South Bay Boy.</div>
@@ -268,16 +272,16 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
 
     <section id="details" data-screen-label="Details" style="border-top: 1px solid var(--color-border); background: var(--color-bg-alt) url(photos/opt/details-hilltop-d.jpg) center / cover no-repeat;">
       <div style="padding: var(--space-8) var(--space-5) var(--space-6); text-align: center;">
-        <div data-reveal style="max-width: 1100px; margin: 0 auto;">
+        <div data-reveal="" style="max-width: 1100px; margin: 0 auto;">
           <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-3); color: #697452; font-size: clamp(44px, 5vw, 64px); text-shadow: 0 0 2px rgba(251,246,238,0.95), 0 0 14px rgba(251,246,238,0.85), 0 0 36px rgba(251,246,238,0.6);">A Weekend of Celebrating Love</h2>
+          <div class="date-location" style="font-size: 40px; line-height: 1.1; color: #4F5A3A; font-weight: 700; font-synthesis: weight; -webkit-text-stroke: 0.8px #4F5A3A; paint-order: stroke fill; text-shadow: 0 0 2px rgba(251,246,238,0.95), 0 0 14px rgba(251,246,238,0.85), 0 0 36px rgba(251,246,238,0.6);">Details</div>
         </div>
       </div>
 
       <sc-if value="{{ detailsPlate }}" hint-placeholder-val="{{ true }}">
         <div style="max-width: 1100px; margin: 0 auto; padding: 0 var(--space-5) var(--space-8); display: grid; grid-template-columns: {{ eventGridCols }}; gap: var(--space-5);">
           <sc-for list="{{ events }}" as="e" hint-placeholder-count="2">
-            <div data-reveal data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5) var(--space-4); text-align: center;">
-              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">{{ e.ord }}</x-import>
+            <div data-reveal="" data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5) var(--space-4); text-align: center;">
               <h3 class="page-title" style="margin: var(--space-3) 0 var(--space-2); font-size: 40px;">{{ e.title }}</h3>
               <div class="date-location">{{ e.date }}</div>
               <div class="date-location">{{ e.loc }}</div>
@@ -291,7 +295,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
       <sc-if value="{{ detailsBands }}">
         <div style="padding-bottom: var(--space-6);">
           <sc-for list="{{ events }}" as="e" hint-placeholder-count="2">
-            <div data-reveal style="border-top: 1px solid var(--color-border); display: grid; grid-template-columns: 1fr 1fr; min-height: 620px;">
+            <div data-reveal="" style="border-top: 1px solid var(--color-border); display: grid; grid-template-columns: 1fr 1fr; min-height: 620px;">
               <div style="position: relative; overflow: hidden; background: var(--color-bg);">
                 <img data-src="{{ e.photo }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 <div style="position: absolute; left: var(--space-4); bottom: var(--space-4); background: var(--color-bg); padding: 6px 12px;">
@@ -299,7 +303,6 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
                 </div>
               </div>
               <div style="padding: var(--space-7) var(--space-6); background: var(--color-bg); display: flex; flex-direction: column; justify-content: center;">
-                <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" hint-size="100%,16px">{{ e.ord }}</x-import>
                 <h3 class="page-title" style="margin: var(--space-3) 0 var(--space-2); font-size: 44px;">{{ e.title }}</h3>
                 <div class="date-location">{{ e.date }} · {{ e.loc }}</div>
                 <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" hint-size="100%,40px"></x-import>
@@ -313,16 +316,65 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
           </sc-for>
         </div>
       </sc-if>
+
+      <div id="attire" style="max-width: 1100px; margin: 0 auto; padding: 0 var(--space-5) var(--space-8);">
+        <div data-reveal="" data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-5) var(--space-4);">
+          <div style="display: flex; flex-direction: column; gap: var(--space-5);">
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-2);">
+              <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Formal Ceremony attire</x-import>
+              <h3 class="page-title" style="margin: 0; font-size: 44px; line-height: 1.15;">Garden Formal</h3>
+              <p style="margin: 0; max-width: 60ch; color: #2B2926;">Dress up and bring the color! This is a garden party at golden hour, so think bright, bold, and joyful — the kind of outfit that makes you want to dance. We just ask that you leave white, ivory, and cream to the bride.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: var(--space-5); text-align: left;">
+              <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                <div style="font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #2B2926;">Ladies</div>
+                <p style="margin: 0; color: #2B2926;">Floor-length or tea-length gowns and dresses in vibrant colors and prints. Florals, ruffles, satin, and statement silhouettes are encouraged.</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                <div style="font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #2B2926;">Gentlemen</div>
+                <p style="margin: 0; color: #2B2926;">Suits or tuxedos in lighter summer fabrics — linen, cotton, or lightweight wool. Color is welcome: think sky blue, cream, sage or emerald green, tan, or a fun pattern. Ties optional.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: var(--space-5);">
+            <div style="border-top: 3px solid #932F51; padding-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); text-align: left;">
+              <img src="photos/icons/shoes.svg" alt="" style="width: 28px; height: 28px; display: block;">
+              <div style="font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #2B2926;">Shoes</div>
+              <p style="margin: 0; font-size: var(--text-body-sm); color: #2B2926;">The ceremony and reception are outdoors on garden paths and lawn — block heels, wedges, or flats are your friend.</p>
+            </div>
+            <div style="border-top: 3px solid #697452; padding-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); text-align: left;">
+              <img src="photos/icons/layers.svg" alt="" style="width: 28px; height: 28px; display: block;">
+              <div style="font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #2B2926;">Layers</div>
+              <p style="margin: 0; font-size: var(--text-body-sm); color: #2B2926;">Santa Barbara evenings get cool — bring a wrap, shawl, or light jacket.</p>
+            </div>
+            <div style="border-top: 3px solid #F3B651; padding-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); text-align: left;">
+              <img src="photos/icons/color.svg" alt="" style="width: 28px; height: 28px; display: block;">
+              <div style="font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #2B2926;">Color</div>
+              <p style="margin: 0; font-size: var(--text-body-sm); color: #2B2926;">The brighter, the better. Have fun with it!</p>
+            </div>
+            </div>
+            <div style="background: #932F51; padding: var(--space-5) var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); text-align: center;">
+              <h4 class="hero-name" style="margin: 0; font-size: 44px; line-height: 1.1; color: #FFFFFF; text-shadow: none;">Colors We Love</h4>
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                <sc-for list="{{ attireColors }}" as="c" hint-placeholder-count="9">
+                  <div style="width: 78px; background: #FFFFFF; box-shadow: 0 2px 6px rgba(43,41,38,0.25); display: flex; flex-direction: column;">
+                    <div style="height: 70px; background: {{ c.hex }};"></div>
+                    <div style="padding: 6px 2px; text-align: center; font-family: var(--font-body); font-size: 11px; letter-spacing: 0.04em; color: #2B2926;">{{ c.name }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="party" data-sage="true" data-screen-label="Wedding party" style="padding: var(--space-8) var(--space-5); border-top: 1px solid var(--color-border); background: #697452 url(photos/opt/party-lawn-d.jpg) center 70% / cover no-repeat;">
       <div style="max-width: 1100px; margin: 0 auto;">
-        <div data-reveal style="text-align: center; margin-bottom: var(--space-7);">
-          <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Wedding party</x-import>
-          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">The People Standing With Us</h2>
+        <div data-reveal="" style="text-align: center; margin-bottom: var(--space-7);">
+          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">Wedding Party</h2>
         </div>
-        <div data-reveal>
-          <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="Her Side" hint-size="100%,40px"></x-import>
+        <div data-reveal="">
+          <div style="display: flex; align-items: center; gap: var(--space-4);"><span style="flex: 1; height: 1px; background: #932F51;"></span><span class="date-location" style="font-size: 40px; line-height: 1.1; color: #932F51; font-weight: 700; font-synthesis: weight; text-shadow: 0 0 6px rgba(251,246,238,0.95), 0 0 14px rgba(251,246,238,0.8);">Her Side</span><span style="flex: 1; height: 1px; background: #932F51;"></span></div>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: var(--space-5);">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt);">
               <img onClick="{{ mohOpen }}" data-src="{{ moh.photo }}" alt="{{ moh.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ moh.pos }}; display: block;">
@@ -347,8 +399,8 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
             </sc-for>
           </div>
         </div>
-        <div data-reveal style="margin-top: var(--space-7);">
-          <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="His Side" hint-size="100%,40px"></x-import>
+        <div data-reveal="" style="margin-top: var(--space-7);">
+          <div style="display: flex; align-items: center; gap: var(--space-4);"><span style="flex: 1; height: 1px; background: #932F51;"></span><span class="date-location" style="font-size: 40px; line-height: 1.1; color: #932F51; font-weight: 700; font-synthesis: weight; text-shadow: 0 0 6px rgba(251,246,238,0.95), 0 0 14px rgba(251,246,238,0.8);">His Side</span><span style="flex: 1; height: 1px; background: #932F51;"></span></div>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: var(--space-5);">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-bg-alt);">
               <img onClick="{{ bestManOpen }}" data-src="{{ bestMan.photo }}" alt="{{ bestMan.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ bestMan.pos }}; display: block;">
@@ -376,18 +428,18 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
       </div>
     </section>
 
-    <section id="travel" data-sage="true" data-screen-label="Travel" style="padding: var(--space-8) var(--space-5); border-top: 1px solid var(--color-border); background: #697452 url(photos/opt/sb-beach-d.jpg) center 40% / cover no-repeat; text-shadow: 0 1px 3px rgba(43,41,38,0.9), 0 0 16px rgba(43,41,38,0.7), 0 0 36px rgba(43,41,38,0.45);">
+    <section id="travel" data-sage="true" data-screen-label="Travel" style="padding: var(--space-8) var(--space-5); border-top: 1px solid var(--color-border); background: #697452; text-shadow: 0 1px 3px rgba(43,41,38,0.9), 0 0 16px rgba(43,41,38,0.7), 0 0 36px rgba(43,41,38,0.45);">
       <div style="max-width: 1100px; margin: 0 auto;">
-        <div data-reveal style="text-align: center; margin-bottom: var(--space-6);">
+        <div data-reveal="" style="text-align: center; margin-bottom: var(--space-6);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Travel &amp; stay</x-import>
           <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE; font-size: clamp(44px, 5vw, 64px);">Where to Sleep, How to Move</h2>
         </div>
-        <div data-reveal role="note" style="max-width: 760px; margin: 0 auto var(--space-6); padding: var(--space-3) var(--space-4); background: #932F51; border: 1px solid #932F51; color: #FBF6EE; text-align: center; display: flex; flex-direction: column; gap: 4px;">
+        <div data-reveal="" role="note" style="max-width: 760px; margin: 0 auto var(--space-6); padding: var(--space-3) var(--space-4); background: #932F51; border: 1px solid #932F51; color: #FBF6EE; text-align: center; display: flex; flex-direction: column; gap: 4px;">
           <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #F3B651;">Please book early</div>
           <p style="margin: 0; font-size: var(--text-body-sm); font-weight: 600; color: #FBF6EE; text-shadow: none;">Because the wedding falls on Memorial Day Weekend, a holiday weekend, we were unable to secure room blocks. Please book your stay as early as possible.</p>
         </div>
         <sc-for list="{{ travelCities }}" as="city" hint-placeholder-count="2">
-          <div data-reveal style="margin-top: var(--space-6);">
+          <div data-reveal="" style="margin-top: var(--space-6);">
             <div style="display: flex; align-items: baseline; gap: var(--space-3); background: rgba(251,246,238,0.9); border-bottom: 1px solid var(--color-accent-free); padding: var(--space-2) var(--space-4); text-shadow: none;">
               <h3 class="section-title" style="margin: 0; color: #932F51; -webkit-text-stroke-color: #932F51;">{{ city.name }}</h3>
               <span class="date-location" style="font-size: 20px; color: #697452;">{{ city.note }}</span>
@@ -409,9 +461,9 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
             </div>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-4);">
               <sc-for list="{{ city.transport }}" as="t" hint-placeholder-count="3">
-                <div style="background: rgba(105,116,82,0.88); padding: var(--space-3) var(--space-4); text-shadow: none;">
-                  <div class="caption" style="letter-spacing: 0.14em; text-transform: uppercase; color: #FBF6EE; font-weight: 700;">{{ t.label }}</div>
-                  <p style="margin: 6px 0 0; font-size: var(--text-body-sm); color: #FBF6EE;">{{ t.value }}</p>
+                <div style="background: #FBF6EE; padding: var(--space-3) var(--space-4); text-shadow: none;">
+                  <div class="caption" style="letter-spacing: 0.14em; text-transform: uppercase; color: #697452; font-weight: 700;">{{ t.label }}</div>
+                  <p style="margin: 6px 0 0; font-size: var(--text-body-sm); color: #4F5A3A;">{{ t.value }}</p>
                 </div>
               </sc-for>
             </div>
@@ -422,13 +474,13 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
 
     <section id="todo" data-sage="true" data-screen-label="Things to do" style="padding: var(--space-8) var(--space-5); border-top: 1px solid var(--color-border); background: #697452 url(photos/opt/sb-aerial-d.jpg) center / cover no-repeat; text-shadow: 0 1px 3px rgba(43,41,38,0.95), 0 0 16px rgba(43,41,38,0.75), 0 0 36px rgba(43,41,38,0.5);">
       <div style="max-width: 1100px; margin: 0 auto;">
-        <div data-reveal style="text-align: center; margin-bottom: var(--space-6);">
+        <div data-reveal="" style="text-align: center; margin-bottom: var(--space-6);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Things to do</x-import>
           <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE; font-size: clamp(44px, 5vw, 64px);">Staying A While?</h2>
           <p style="max-width: 56ch; margin: 0 auto; color: var(--color-text-muted);">Four favourites in each city. None of it is scheduled — go at your own pace.</p>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-7);">
-          <div data-reveal style="background: rgba(105,116,82,0.78); padding: var(--space-4) var(--space-5) var(--space-3);">
+          <div data-reveal="" style="background: rgba(105,116,82,0.78); padding: var(--space-4) var(--space-5) var(--space-3);">
             <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="Los Angeles" hint-size="100%,40px"></x-import>
             <sc-for list="{{ todoLA }}" as="t" hint-placeholder-count="4">
               <div style="display: grid; grid-template-columns: 44px 1fr; gap: var(--space-3); padding: var(--space-4) 0; border-top: 1px solid var(--color-border);">
@@ -440,7 +492,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
               </div>
             </sc-for>
           </div>
-          <div data-reveal style="background: rgba(105,116,82,0.78); padding: var(--space-4) var(--space-5) var(--space-3);">
+          <div data-reveal="" style="background: rgba(105,116,82,0.78); padding: var(--space-4) var(--space-5) var(--space-3);">
             <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Divider" label="Santa Barbara" hint-size="100%,40px"></x-import>
             <sc-for list="{{ todoSB }}" as="t" hint-placeholder-count="4">
               <div style="display: grid; grid-template-columns: 44px 1fr; gap: var(--space-3); padding: var(--space-4) 0; border-top: 1px solid var(--color-border);">
@@ -457,11 +509,11 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
     </section>
 
     <section id="registry" data-screen-label="Registry" style="position: relative; border-top: 1px solid var(--color-border); overflow: hidden;">
-      <div data-parallax-slow style="position: absolute; inset: -10% 0;">
+      <div data-parallax-slow="" style="position: absolute; inset: -10% 0;">
         <img src="photos/coast.jpeg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
       </div>
       <div style="position: relative; padding: var(--space-8) var(--space-5); display: flex; justify-content: center;">
-        <div data-reveal data-doily="true" style="width: 760px; max-width: 92vw; border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-6) var(--space-5); text-align: center;">
+        <div data-reveal="" data-doily="true" style="width: 760px; max-width: 92vw; border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-6) var(--space-5); text-align: center;">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Registry</x-import>
           <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-3);">A Gift, If You Wish</h2>
           <p style="max-width: 52ch; margin: 0 auto var(--space-6);">Your presence at two celebrations, in two cities, is already a great deal to ask. If you would like to give something, we are saving towards a first home together.</p>
@@ -478,7 +530,7 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
     </section>
 
     <section id="gallery" data-sage="true" data-screen-label="Gallery" style="padding: 0; border-top: 1px solid var(--color-border); background: #697452;">
-      <div data-reveal onMouseEnter="{{ onGalEnter }}" onMouseLeave="{{ onGalLeave }}" style="position: relative; overflow: hidden; height: min(62vh, 36vw);">
+      <div data-reveal="" onMouseEnter="{{ onGalEnter }}" onMouseLeave="{{ onGalLeave }}" style="position: relative; overflow: hidden; height: min(62vh, 36vw);">
         <div style="display: flex; height: 100%; transition: transform 0.7s cubic-bezier(.22,.61,.36,1); transform: translateX({{ galOffset }});">
           <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="3">
             <figure style="margin: 0; flex: 0 0 33.3333%; height: 100%; position: relative; overflow: hidden; box-sizing: border-box; border-right: 4px solid #697452; background: rgba(251,246,238,0.1);">
@@ -501,12 +553,12 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
 
     <section id="faq" data-sage="true" data-screen-label="FAQ" style="padding: var(--space-8) var(--space-5); border-top: 1px solid var(--color-border);">
       <div style="max-width: 860px; margin: 0 auto;">
-        <div data-reveal style="text-align: center; margin-bottom: var(--space-6);">
+        <div data-reveal="" style="text-align: center; margin-bottom: var(--space-6);">
           <img src="photos/ob-logo.svg" alt="OB logo" style="width: 150px; height: auto; display: block; margin: 0 auto var(--space-4); filter: brightness(0) invert(1);">
           <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Eyebrow" align="center" hint-size="100%,16px">Questions</x-import>
-          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2);">Anything Else You Might Ask</h2>
+          <h2 class="page-title" style="margin: var(--space-3) 0 var(--space-2); color: #FBF6EE;">Anything Else You Might Ask</h2>
         </div>
-        <div data-reveal data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-2) var(--space-4); color: #2B2926; text-shadow: none;">
+        <div data-reveal="" data-doily="true" style="border: 60px solid transparent; border-image: url(photos/doily-lace-v2.png) 196 / 60px round; background: #f7f3e9; background-clip: padding-box; filter: drop-shadow(0 2px 5px rgba(90,70,40,0.18)); padding: var(--space-2) var(--space-4); color: #2B2926; text-shadow: none;">
           <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="8">
             <div style="border-top: {{ f.rule }};">
               <button type="button" onClick="{{ f.onToggle }}" data-plain="true" style="width: 100%; background: transparent; border: none; padding: var(--space-4) 0; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); cursor: pointer; text-align: left; text-transform: none; letter-spacing: 0;">
@@ -515,6 +567,19 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
               </button>
               <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
                 <p style="margin: 0 0 var(--space-4); max-width: var(--measure); color: #2B2926;">{{ f.a }}</p>
+                <sc-if value="{{ f.colors }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin: 0 0 var(--space-4); display: flex; flex-direction: column; gap: var(--space-3);">
+                    <div style="font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #932F51;">Colors we love</div>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px;">
+                <sc-for list="{{ attireColors }}" as="c" hint-placeholder-count="9">
+                  <div style="width: 64px; background: #FFFFFF; box-shadow: 0 2px 6px rgba(43,41,38,0.25); display: flex; flex-direction: column;">
+                    <div style="height: 58px; background: {{ c.hex }};"></div>
+                    <div style="padding: 6px 2px; text-align: center; font-family: var(--font-body); font-size: 11px; letter-spacing: 0.04em; color: #2B2926;">{{ c.name }}</div>
+                  </div>
+                </sc-for>
+              </div>
+                  </div>
+                </sc-if>
               </sc-if>
             </div>
           </sc-for>
@@ -529,19 +594,14 @@ fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
       <div style="margin-top: var(--space-5);">
         <x-import component-from-global-scope="OgechiBrandonWeddingDesignSystem_218db6.Button" variant="outline" size="sm" on-click="{{ onBackToTop }}" hint-size="auto,40px">Back to top</x-import>
       </div>
-      <div class="caption" style="margin-top: var(--space-5);">Questions? Write to us at ogechiandbrandon@email.com</div>
+      <div class="caption" style="margin-top: var(--space-5);">Questions? Write to us at <a href="mailto:bazuoma@gmail.com" style="color: inherit;">bazuoma@gmail.com</a> or <a href="mailto:ogechih@icloud.com" style="color: inherit;">ogechih@icloud.com</a></div>
     </footer>
 
   </sc-if>
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;detailsLayout&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Invitation plate&quot;, &quot;Photo bands&quot;], &quot;default&quot;: &quot;Invitation plate&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Variants&quot; },
-  &quot;rsvpFlow&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Both events at once&quot;, &quot;One event at a time&quot;], &quot;default&quot;: &quot;Both events at once&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Variants&quot; },
-  &quot;cinematicScroll&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot; },
-  &quot;startUnlocked&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot; }
-}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;detailsLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Invitation plate&quot;,&quot;Photo bands&quot;],&quot;default&quot;:&quot;Invitation plate&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Variants&quot;},&quot;rsvpFlow&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Both events at once&quot;,&quot;One event at a time&quot;],&quot;default&quot;:&quot;Both events at once&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Variants&quot;},&quot;cinematicScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;startUnlocked&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
 const SECTIONS = [
   ['home', 'Home'], ['story', 'Our story'], ['details', 'Details'], ['party', 'Wedding party'],
   ['travel', 'Travel'], ['todo', 'Things to do'], ['registry', 'Registry'], ['gallery', 'Gallery'],
@@ -560,7 +620,7 @@ const EVENTS = {
     details: [
       { label: 'Time', value: 'Begins at 6:00pm.' },
       { label: 'Place', value: 'CMG Cultural Center\n715 W Redondo Beach Blvd, Gardena, CA 90247. On-site parking details to follow.' },
-      { label: 'Dress', value: 'Nigerian attire' }
+      { label: 'Dress', value: 'Cocktail and Semi-Formal Attire' }
     ],
     timeline: [
       { label: '1:30pm', value: 'Guests arrive' }, { label: '2:00pm', value: 'Traditional rites' },
@@ -575,7 +635,7 @@ const EVENTS = {
     details: [
       { label: 'Time', value: 'Ceremony at 4:00pm.' },
       { label: 'Place', value: 'The Hilltop, Santa Barbara Zoo\n500 Niños Drive, Santa Barbara, CA 93103.' },
-      { label: 'Dress', value: 'Formal attire. Preferred guest colors: crimson, sage green, goldenrod, coral and ivory.' }
+      { label: 'Dress', value: 'Garden Formal. Bright, bold color is welcome; please leave white, ivory, and cream to the bride. See the attire guide below.' }
     ],
     timeline: [
       { label: '3:15pm', value: 'Guests arrive' }, { label: '4:00pm', value: 'Ceremony' },
@@ -586,25 +646,21 @@ const EVENTS = {
 };
 
 const HOTELS_LA_RAW = [
-  { name: 'Torrance Marriott Redondo Beach', area: 'Torrance', note: 'About 10 minutes from the CMG Cultural Center in Gardena.', url: 'https://www.marriott.com/en-us/hotels/laxtr-torrance-marriott-redondo-beach/overview/', couple: true },
-  { name: 'DoubleTree by Hilton Hotel Torrance - South Bay', area: 'Torrance · South Bay', note: 'A short drive to the traditional ceremony and the beach cities.', url: 'https://www.hilton.com/en/hotels/laxthdt-doubletree-torrance-south-bay/' },
-  { name: 'Hilton Garden Inn Los Angeles/Redondo Beach', area: 'Redondo Beach', note: 'Close to Gardena, with the Redondo pier nearby.', url: 'https://www.hilton.com/en/hotels/laxrbgi-hilton-garden-inn-los-angeles-redondo-beach/' },
-  { name: 'New Gardena Hotel', area: 'Gardena · 1 mi from the venue', note: 'Well reviewed, with a secured parking garage and Japanese and American breakfast.', url: 'https://www.newgardenahotel.com' },
-  { name: 'Best Western Plus Gardena Inn & Suites', area: 'Gardena · 1.3 mi from the venue', note: 'Recently renovated, with free breakfast and parking.', url: 'https://www.bestwestern.com/en_US/book/hotel-details.05730.html' },
-  { name: 'Hotel Pacific Garden', area: 'Gardena · 1 mi from the venue', note: 'The closest budget option to the CMG Cultural Center.', url: 'https://www.hotels.com/ho3336209344/hotel-pacific-garden-gardena-united-states-of-america' },
+  { name: 'Torrance Marriott Redondo Beach', area: 'Torrance · 5.4 mi from the venue', note: 'About 10 minutes from the CMG Cultural Center in Gardena.', url: 'https://www.marriott.com/en-us/hotels/laxtr-torrance-marriott-redondo-beach/overview/', couple: true },
+  { name: 'DoubleTree by Hilton Hotel Torrance - South Bay', area: 'Torrance · South Bay · 5.3 mi from the venue', note: 'A short drive to the traditional ceremony and the beach cities.', url: 'https://www.hilton.com/en/hotels/laxthdt-doubletree-torrance-south-bay/' },
+  { name: 'Hilton Garden Inn Los Angeles/Redondo Beach', area: 'Redondo Beach · 4.9 mi from the venue', note: 'Close to Gardena, with the Redondo pier nearby.', url: 'https://www.hilton.com/en/hotels/laxrbgi-hilton-garden-inn-los-angeles-redondo-beach/' },
   { name: 'Hampton Inn Los Angeles/Carson/Torrance', area: 'Carson · 2 mi from the venue', note: 'Free hot breakfast, an outdoor pool and plenty of parking.', url: 'https://www.hilton.com/en/hotels/csncahx-hampton-los-angeles-carson-torrance/' },
   { name: 'Sonesta Select LA Torrance South Bay', area: 'Torrance · 2.7 mi from the venue', note: 'A simple, comfortable stay a short drive from Gardena.', url: 'https://www.sonesta.com/sonesta-select/ca/torrance/sonesta-select-los-angeles-torrance-south-bay' },
   { name: 'DoubleTree by Hilton Hotel Carson', area: 'Carson · 4.5 mi from the venue', note: 'Pool with cabanas and firepits, plus a restaurant and sports bar. Paid parking.', url: 'https://www.hilton.com/en/hotels/lgbchdt-doubletree-carson/' }
 ];
 
 const HOTELS_SB_RAW = [
-  { name: 'Mar Monte Hotel', area: 'East Beach · 0.3 mi from the zoo · The Unbound Collection by Hyatt', note: 'Across from East Beach and a short walk from the Santa Barbara Zoo.', url: 'https://www.hyatt.com/unbound-collection/en-US/sbars-mar-monte-hotel', couple: true },
-  { name: 'Hilton Santa Barbara Beachfront Resort', area: 'East Beach · 0.7 mi from the zoo', note: 'Across from East Beach and about half a mile from the Santa Barbara Zoo.', url: 'https://www.hilton.com/en/hotels/sbafphh-hilton-santa-barbara-beachfront-resort/' },
-  { name: 'Hotel Milo', area: 'West Beach · 1.7 mi from the zoo', note: 'The quieter, simpler option, right on the sand.', url: 'https://be.synxis.com/?Hotel=42612&Chain=6255&arrive=2027-05-29&depart=2027-05-31&adult=2&child=0&promo=OBWED27', cta: 'Book Now' },
-  { name: 'Santa Barbara Inn', area: 'East Beach · 0.45 mi from the zoo', note: 'Boutique hotel with continental breakfast included. Walkable to the zoo.', url: 'https://www.santabarbarainn.com' },
-  { name: 'The Inn at East Beach', area: 'East Beach · 0.3 mi from the zoo', note: 'The closest budget pick, about a five minute walk to the zoo.', url: 'https://www.booking.com/hotel/us/inn-at-east-beach.html' },
-  { name: 'Cabrillo Inn at the Beach', area: 'East Beach · 0.4 mi from the zoo', note: 'Across from East Beach, with free breakfast and parking.', url: 'https://www.booking.com/hotel/us/cabrillo-inn-at-the-beach.html' },
-  { name: 'Pacific Crest Hotel', area: 'East Beach · 0.35 mi from the zoo', note: 'Renovated in 2024, with free parking.', url: 'https://www.expedia.com/Santa-Barbara-Hotels-Pacific-Crest-Hotel-Santa-Barbara.h915130.Hotel-Information' }
+  { name: 'Mar Monte Hotel', area: 'East Beach · 0.3 mi from the venue · The Unbound Collection by Hyatt', note: 'Across from East Beach and a short walk from the Santa Barbara Zoo.', url: 'https://www.hyatt.com/unbound-collection/en-US/sbars-mar-monte-hotel', couple: true },
+  { name: 'Hilton Santa Barbara Beachfront Resort', area: 'East Beach · 0.7 mi from the venue', note: 'Across from East Beach and about half a mile from the Santa Barbara Zoo.', url: 'https://www.hilton.com/en/hotels/sbafphh-hilton-santa-barbara-beachfront-resort/' },
+  { name: 'Hotel Milo', area: 'West Beach · 1.7 mi from the venue', note: 'The quieter, simpler option, right on the sand.', url: 'https://be.synxis.com/?Hotel=42612&Chain=6255&arrive=2027-05-29&depart=2027-05-31&adult=2&child=0&promo=OBWED27', cta: 'Book Now' },
+  { name: 'Santa Barbara Inn', area: 'East Beach · 0.45 mi from the venue', note: 'Boutique hotel with continental breakfast included. Walkable to the zoo.', url: 'https://www.santabarbarainn.com' },
+  { name: 'The Inn at East Beach', area: 'East Beach · 0.3 mi from the venue', note: 'The closest budget pick, about a five minute walk to the zoo.', url: 'https://www.booking.com/hotel/us/inn-at-east-beach.html' },
+  { name: 'Cabrillo Inn at the Beach', area: 'East Beach · 0.4 mi from the venue', note: 'Across from East Beach, with free breakfast and parking.', url: 'https://www.booking.com/hotel/us/cabrillo-inn-at-the-beach.html' }
 ];
 const withCta = l => l.map(x => ({ ...x, cta: x.cta || 'Visit Website' }));
 const HOTELS_LA = withCta(HOTELS_LA_RAW);
@@ -636,11 +692,19 @@ const TODO_SB = [
   { n: '04', name: 'Butterfly Beach', note: 'Montecito. Quiet, west-facing, made for sunset.' }
 ];
 
+const ATTIRE_COLORS = [
+  { name: 'Hot Pink', hex: '#F0509A' }, { name: 'Magenta', hex: '#C2185B' }, { name: 'Fuchsia', hex: '#B53A92' },
+  { name: 'Orange', hex: '#F26A22' }, { name: 'Marigold', hex: '#F6A623' }, { name: 'Red', hex: '#D3262E' },
+  { name: 'Chartreuse', hex: '#8D9A3A' }, { name: 'Turquoise', hex: '#2DB5A8' }, { name: 'Cobalt', hex: '#2152C2' }
+];
+
 const FAQS = [
-  { q: 'What should I wear?', a: 'Nigerian attire for the traditional wedding in Los Angeles, and garden formal for the white wedding at the Hilltop. Aso ebi colours will be shared closer to the date.' },
+  { q: 'What should I wear for the Traditional Ceremony?', a: 'Cocktail and semi-formal attire.' },
+  { q: 'What should I wear for the Formal Ceremony?', a: 'Garden Formal. Dress up and bring the color! This is a garden party at golden hour, so think bright, bold, and joyful — the kind of outfit that makes you want to dance. We just ask that you leave white, ivory, and cream to the bride. Ladies: Floor-length or tea-length gowns and dresses in vibrant colors and prints. Florals, ruffles, satin, and statement silhouettes are encouraged. Gentlemen: Suits or tuxedos in lighter summer fabrics — linen, cotton, or lightweight wool. Color is welcome: think sky blue, cream, sage or emerald green, tan, or a fun pattern. Ties optional. Shoes: block heels, wedges, or flats for the garden paths and lawn. Layers: Santa Barbara evenings get cool, so bring a wrap, shawl, or light jacket.', colors: true },
   { q: 'What time does the Formal Ceremony end?', a: 'The Formal Ceremony ends at 10:00pm. There will be an after party following the event.' },
-  { q: 'Are children invited?', a: 'The traditional wedding is family-wide. The white wedding is adults only, so that everyone can relax for the evening.' },
-  { q: 'Can I bring a guest?', a: 'Your invitation lists the number of seats reserved in your name. If you are unsure, write to us and we will check the list.' },
+  { q: 'Are children invited?', a: 'Due to limited numbers, we hope you appreciate that children are only invited if named on your invitation.' },
+  { q: 'Can I bring a guest?', a: 'Unfortunately, we cannot accommodate additional guests. Due to limited capacity, we can only allow the people named on your invitation. Your invitation will be made out to "[Your Name] and Guest" if a plus-one has been given to you.' },
+  { q: 'What if I can no longer attend?', a: 'Although we would love for you to be in attendance, we understand that life happens. In the event that you can no longer attend, please notify us as soon as possible.' },
   { q: 'Where do I park at the Hilltop?', a: 'Guest parking at the Santa Barbara Zoo is free and signed. Attendants will point you up to the Hilltop from the lot.' },
   { q: 'Is the ceremony outdoors?', a: 'Yes. Ceremony, cocktails and dinner are all outside, on the lawn above the ocean. Evenings in Santa Barbara turn cool, so bring a layer.' },
   { q: 'How far apart are the two cities?', a: 'About two hours by car, or two and a half on the Amtrak Pacific Surfliner along the coast.' },
@@ -685,9 +749,9 @@ const STORY_SLIDES = [
   { src: 'photos/couple-embrace.jpeg', pos: '50% 35%', caption: 'Engagement, 2025' },
   { src: 'photos/couple-walk.jpeg', pos: '50% 40%', caption: 'El Matador' },
   { src: 'photos/rings-close.jpeg', pos: '50% 50%', caption: 'The rings' },
-  { src: 'photos/opt/story-proposal-d.jpg', pos: '50% 68%', caption: 'The proposal' },
-  { src: 'photos/opt/story-rock-d.jpg', pos: '50% 28%', caption: 'Engagement' },
-  { src: 'photos/opt/story-bw-d.jpg', pos: '50% 38%', caption: 'Engagement' },
+  { src: 'photos/opt/story-proposal-d.jpg', pos: '50% 56%', caption: 'The proposal' },
+  { src: 'photos/opt/story-rock-d.jpg', pos: '50% 8%', caption: 'Engagement' },
+  { src: 'photos/opt/story-bw-d.jpg', pos: '50% 20%', caption: 'Engagement' },
   { src: 'photos/opt/story-kiss-d.jpg', pos: '50% 58%', caption: 'The ring' }
 ];
 
@@ -1009,8 +1073,9 @@ class Component extends DCLogic {
       onGalNext: () => this.setState({ galIndex: ((s.galIndex || 0) + 1) % (GALLERY.length - 2) }),
       gallery: GALLERY.map((g, i) => ({ src: g.src, caption: g.caption, empty: !g.src, cols: [2,1,1,1,1,2,1,2,1][i] || 1, rows: [2,1,1,2,1,1,1,1,1][i] || 1 })),
 
+      attireColors: ATTIRE_COLORS,
       faqs: FAQS.map((f, i) => ({ rule: i === 0 ? 'none' : '1px solid #E4DDD3',
-        q: f.q, a: f.a, open: s.openFaq === i,
+        q: f.q, a: f.a, colors: !!f.colors, open: s.openFaq === i,
         mark: s.openFaq === i ? '—' : '+',
         color: s.openFaq === i ? 'var(--color-heading)' : 'var(--color-text-body)',
         onToggle: () => this.setState({ openFaq: s.openFaq === i ? -1 : i })
